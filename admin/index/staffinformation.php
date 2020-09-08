@@ -5,7 +5,7 @@
 </style>
 <body id="body">
 	<hr>
-	<h2>ようこそ</h2>
+	<h2>お帰りなさい</h2>
 	<hr>
 	<!-- Search  -->
 	<section id="carian">
