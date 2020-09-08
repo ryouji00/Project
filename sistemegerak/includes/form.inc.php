@@ -34,7 +34,7 @@ if (isset($_POST['send-submit'])) {
 				exit();
 			}
 		    else{
-			$sql = "INSERT INTO destination (category,workname,placename,tripstart,tripend,timestart,timeend,replaceofficer) VALUES (?,?,?,?,?,?,?,?)";
+			    $sql = "INSERT INTO destination (category,workname,placename,tripstart,tripend,timestart,timeend,replaceofficer) VALUES (?,?,?,?,?,?,?,?)";
 				$stmt = mysqli_stmt_init($conn);
 				if(!mysqli_stmt_prepare($stmt,$sql)){
 			     header("Location: ../form.php?error=sqlerror");
