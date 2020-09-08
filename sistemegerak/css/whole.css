@@ -1,0 +1,41 @@
+/* Header */
+
+#logo {
+    background-color: white;
+    align-content: center;
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #deb887;
+}
+
+h2 {
+    margin: auto;
+    background-color: white;
+    border-style: inset;
+    width: 300px;
+    text-align: left;
+    text-align: center;
+    text-decoration: underline solid;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e5951e;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+}
+
+input {
+    outline: none;
+}

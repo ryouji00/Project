@@ -1,0 +1,237 @@
+/* NavBar */
+
+
+/* #navbar {
+    border-style: 1px solid rgb(0, 0, 0);
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+li {
+    float: left;
+    border-right: 1px solid rgb(0, 0, 0);
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    color: black;
+}
+
+li a:hover:not(.active) {
+    background-color: #57aaf7;
+}
+
+.home {
+    background-color: #57aaf7;
+}*/
+
+
+/* Header */
+
+#logo {
+    background-color: white;
+    align-content: center;
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.tajuk {
+    font-family: monospace, Courier;
+    text-decoration: none;
+    color: black;
+}
+
+#body {
+    font-family: sans-serif;
+    background-color: rgb(125, 203, 255);
+}
+
+h2 {
+    margin: auto;
+    background-color: white;
+    border-style: inset;
+    width: 300px;
+    text-align: center;
+    text-decoration: underline solid;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 208, 0);
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    outline-color: #888888;
+}
+
+a:hover {
+    outline: none;
+    color: black;
+}
+
+#logoutbtn {
+    right: 0;
+    position: relative;
+}
+
+
+/* Dashboard */
+
+th {
+    background-color: rgb(36, 40, 49);
+}
+
+
+/* Staff Destination */
+
+#form {
+    background-color: white;
+    border-style: solid;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+/* Overall Movement */
+
+.resultoverall {
+    align-content: center;
+    background-color: white;
+    border-style: solid;
+    width: 300px;
+    padding-left: 20px;
+    margin-left: 20px;
+    box-shadow: 5px 10px #888888;
+}
+
+.peopleout {
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 300px;
+    border-style: solid;
+    background-color: white;
+    margin-left: 20px;
+    box-shadow: 5px 10px #888888;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Staff Information */
+
+#carian {
+    margin: auto;
+    margin-bottom: 70px;
+    background-color: white;
+    border-style: solid;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 1200px;
+    max-height: 1500px;
+    box-shadow: 5px 8px #888888;
+    outline: none;
+}
+
+input {
+    width: 300px;
+    border-radius: 8px;
+    border-width: 1px;
+    color: #888888;
+}
+
+.bil {
+    text-align: center;
+}
+
+thead {
+    background-color: rgb(60, 200, 255);
+    font-weight: bold;
+    color: black;
+}
+
+#myInput {
+    outline-color: #888888;
+}
+
+
+/* Staff Information Result */
+
+#result {
+    margin: auto;
+    border-style: solid;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    /* max-height: 500px; */
+    padding-bottom: 20px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.table {
+    border-color: black;
+}
+
+
+/* Edit Information */
+
+input {
+    margin-top: 10px;
+}
+
+h3 {
+    padding: 20px;
+}
+
+h4 {
+    text-decoration-line: underline;
+}
+
+#changedate {
+    width: 150px;
+}
+
+
+/* Delete Information */
+
+.aysywtd {
+    color: white;
+    margin: auto;
+    margin-bottom: 10px;
+    border-style: solid;
+    width: 200px;
+    background-color: red;
+    text-align: center;
+}
+
+h3 {
+    padding: 20px;
+}
+
+h4 {
+    text-decoration-line: underline;
+}

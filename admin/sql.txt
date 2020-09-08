@@ -1,0 +1,27 @@
+CREATE TABLE DESTINATION(
+    destinationid INT(11) NOT NULL AUTO_INCREMENT,
+    destinationname VARCHAR(50),
+    starttrip DATE,
+    endtrip DATE,
+    replaceofficer VARCHAR(50),
+    permissionofficer VARCHAR(50),
+    note TEXT,
+    staffid INT(11) NOT NULL,
+    PRIMARY KEY (destinationid),
+    FOREIGN KEY (staffid) REFERENCES staff(staffid)
+);
+
+CREATE TABLE STAFF(
+    staffid INT(11) NOT NULL AUTO_INCREMENT,
+    staffusername TINYTEXT,
+    staffemail TINYTEXT,
+    staffpassword LONGTEXT,
+    staffname LONGTEXT,
+    staffposition LONGTEXT,
+    PRIMARY KEY (staffid)
+);
+
+INSERT INTO STAFF
+VALUES (3000, "squintytheretard", "squinty@gmail.com", "12345", "Ahmed Squinty Alusi"),
+(4000, "munispalabana", "munis@gmail.com", "23456", "Munis A/L Areskumar"),
+(4001, "jibi", "shahrul@gmail.com", "34567", "Jibi Awesome");

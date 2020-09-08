@@ -1,0 +1,11 @@
+#form {
+    background-color: white;
+    border-style: solid;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#result {
+    padding: 10px;
+    border-width: 200px;
+}

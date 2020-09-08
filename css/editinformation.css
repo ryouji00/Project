@@ -1,0 +1,26 @@
+#result {
+    margin: auto;
+    border-style: solid;
+    background-color: white;
+    padding-left: 20px;
+    color: black;
+    padding-bottom: 20px;
+    width: 600px;
+    padding-top: 10px;
+}
+
+p {
+    color: white;
+}
+
+input {
+    margin-top: 10px;
+}
+
+h3 {
+    padding: 20px;
+}
+
+h4 {
+    text-decoration-line: underline;
+}

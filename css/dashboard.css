@@ -1,0 +1,25 @@
+#myInput {
+    margin: auto;
+    background-image: url("img/search.png");
+    /* Add a search icon to input */
+    background-size: 20px 20px;
+    /* Background size */
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+}
+
+#table-for-today {
+    max-height: 445px;
+}
+
+#table-for-today thead th {
+    border-top: black;
+    position: sticky;
+    top: 0;
+}
+
+th {
+    background-color: rgb(36, 40, 49);
+}
