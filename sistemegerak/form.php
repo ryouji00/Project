@@ -49,9 +49,6 @@
 				FROM staff
 				WHERE staffid = '$staffid';";
 		$result = $conn -> query($sql);
-		if($result == 'Admin') {
-			//echo '';
-		}
 		?>
 	</div>
 </div>
