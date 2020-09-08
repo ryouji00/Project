@@ -1,7 +1,6 @@
 	<?php require_once "header.php";?>
 	<title>Sistem E-Gerak | Hasil Carian Pegawai</title>
 </head>
-<!-- <link rel="stylesheet" type="text/css" href="../css/staffinformationresult.css"> -->
 <body id="body">
 	<div>
 		<hr>

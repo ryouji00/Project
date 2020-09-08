@@ -1,7 +1,6 @@
 	<?php require "header.php";?>
 	<title>Sistem E-Gerak | Pergerakan Menyeluruh</title>
 </head>
-<!-- <link rel="stylesheet" type="text/css" href="../css/overallmovement.css"> -->
 <body id="body">
 	<hr>
 	<h2>Pergerakan Menyeluruh</h2>

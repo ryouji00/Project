@@ -1,7 +1,6 @@
 	<?php require "header.php";?>
 	<title>Sistem E-Gerak | Pergerakan Pegawai</title>
 </head>
-<!-- <link rel="stylesheet" type="text/css" href="../css/staffdestination.css"> -->
 <body id="body">
 	<hr>
 	<h2>Pergerakan Pegawai</h2>

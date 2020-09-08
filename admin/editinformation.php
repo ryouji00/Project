@@ -1,4 +1,3 @@
-<!-- link rel="stylesheet" type="text/css" href="../css/editinformation.css"> -->
 <body id="body">
 	<div>
 		<hr>

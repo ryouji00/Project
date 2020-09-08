@@ -1,4 +1,3 @@
-<!-- <link rel="stylesheet" type="text/css" href="../css/deleteinformation.php"> -->
 <script>
 	$('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')

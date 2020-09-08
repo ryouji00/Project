@@ -4,7 +4,6 @@
 <style>
 </style>
 <!-- New line to check change -->
-<!-- <link rel="stylesheet" type="text/css" href="../css/dashboard.css"> -->
 <body id="body">
 	<!-- JQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
