@@ -68,7 +68,7 @@
 		?> -->
 		</form>
 	</section>
-	<script type="text/javascript" src="js/main.js">
+	<script>
 		/* staffinformation */
 		//for search filter
 		$(document).ready(function() {
