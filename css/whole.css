@@ -1,34 +1,3 @@
-/* NavBar */
-
-
-/* #navbar {
-    border-style: 1px solid rgb(0, 0, 0);
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
-    overflow: hidden;
-    background-color: whitesmoke;
-}
-
-li {
-    float: left;
-    border-right: 1px solid rgb(0, 0, 0);
-}
-
-li a {
-    display: block;
-    padding: 8px;
-    color: black;
-}
-
-li a:hover:not(.active) {
-    background-color: #57aaf7;
-}
-
-.home {
-    background-color: #57aaf7;
-}*/
-
 
 /* Header */
 
