@@ -1,12 +1,8 @@
 <?php
+$host = 'localhost';
+$user = 'Azrie00';
+$pass = '';
+$db = 'egerak';
 
-$servername = "localhost";
-$dbUsername = "root";
-$dBPassword = "";
-$dBName = "sistem pergerakan pegawai";
-
-$conn = mysqli_connect($servername,$dbUsername,$dBPassword,$dBName);
-
-if (!$conn) {
-	die("Connection failed:" .mysqli_connect_error());
-}
+$conn = mysqli_connect($host, $user, $pass, $db) or die("Could not connect the database");
+?>
