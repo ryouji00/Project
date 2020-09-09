@@ -1,10 +1,10 @@
 <?php
-if (isset($_POST['send-submit'])) {
-	
+if(isset($_POST['send-submit'])){
+
 	require 'dbh.inc.php';
 
 	$category = $_POST['place-go'];
-	$workname = $_POST['work'];
+	$worknama = $_POST['work'];
 	$placename = $_POST['place'];
 	$tripstart = $_POST['trip-start'];
 	$tripend = $_POST['trip-end'];
@@ -12,9 +12,8 @@ if (isset($_POST['send-submit'])) {
 	$timeend = $_POST['time-end'];
 	$pegawai = $_POST['officer'];
 
-
-	if (empty($category) || empty($workname) || empty($placename) || empty($tripstart)|| empty($tripend) || empty($timestart)|| empty($timeend) || empty($pegawai)) {
-		header("Location: ../form.php?error=emptyfields&place-go=".$category."&place-go=" .$workname);
+	if(empty($category) || empty($worknama) || empty($placename) || empty($tripstart) || empty($tripend) || empty($timestart) || empty($timeend) || empty($pegawai)) {
+		header("Location: ../form.php?error=emptyfields&place-go=".$category. "&place-go=" .$worknama);
 		exit();
 	}
 	else{
@@ -25,7 +24,7 @@ if (isset($_POST['send-submit'])) {
 			exit();
 		}
 		else{
-			mysqli_stmt_bind_param($stmt, "s",$pegawai);
+			mysqli_stmt_bind_param($stmt,"s",$pegawai);
 			mysqli_stmt_execute($stmt);
 			mysqli_stmt_store_result($stmt);
 			$resultCheck = mysqli_stmt_num_rows($stmt);
@@ -33,31 +32,28 @@ if (isset($_POST['send-submit'])) {
 				header("Location: ../form.php?error=officertaken&officer=".$pegawai);
 				exit();
 			}
-		    else{
-			    $sql = "INSERT INTO destination (category,workname,placename,tripstart,tripend,timestart,timeend,replaceofficer) VALUES (?,?,?,?,?,?,?,?)";
+			else{
+				$sql = "INSERT INTO destination (category,workname,placename,tripstart,tripend,timestart,timeend,replaceofficer) VALUE (?,?,?,?,?,?,?,?)";
 				$stmt = mysqli_stmt_init($conn);
 				if(!mysqli_stmt_prepare($stmt,$sql)){
-			     header("Location: ../form.php?error=sqlerror");
-			     exit();
+					header("Location: ../form.php?error=sqlerror");
+					exit();
 				}
-				 else{
-					mysqli_stmt_bind_param($stmt, "ssssssss",$category,$workname,$placename,$tripstart,$tripend,$timestart,$timeend,$pegawai);
-			        mysqli_stmt_execute($stmt);
-			        header("Location: ../form.php?form=success");
-			        exit();
+				else{
+					mysqli_stmt_bind_param($stmt, "ssssssss",$category,$worknama,$placename,$tripstart,$tripend,$timestart,$timeend,$pegawai);
+					mysqli_stmt_execute($stmt);
+					header("Location: ../form.php?form=success");
+					exit();
 				}
-		    
-		    }    
-	    }
+			}
+		}
 	}
 	mysqli_stmt_close($stmt);
-	mysql_close($conn);
-
-
+	mysqli_close($conn);
 }
 else{
-header("Location: ../form.php?form=success");
-exit();
+	header("Location: ../form.php?form=success");
+	exit();
 }
 
 
