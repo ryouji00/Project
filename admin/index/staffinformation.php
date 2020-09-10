@@ -6,7 +6,6 @@
 <body id="body">
 	<hr>
 	<h2>Welcome</h2>
-	<hr>
 	<!-- Search  -->
 	<section id="carian">
 		<form action="staffinformation.php" method="GET">

@@ -26,9 +26,9 @@
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
 						WHERE staffname LIKE ('$implodeArray')
-						ORDER BY starttrip ASC;";
+						ORDER BY destinationId DESC;";
 				$result2 = $conn -> query($sql2);
-				if($result2 -> num_rows > 0) {
+				if($result2 = num_rows > 0) {
 					while($row2 = $result -> fetch_assoc()) {
 						echo "Kategori: " .$row2["category"];
 						echo "Tugasan: " .$row2["workname"];
