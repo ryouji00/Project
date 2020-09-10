@@ -6,7 +6,7 @@ session_start();
 <html>
 	<head>
 		<div id="logo">
-			<a href="http://localhost/Project/admin/staffinformation.php">
+			<a href="http://localhost/Project/admin/index/staffinformation.php">
 				<img class="firstimg" src="../img/jatanegara2.png" width="160">
 				<img class="secondimg" src="../img/kkm2.png" width="160">
 			</a>
