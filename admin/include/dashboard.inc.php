@@ -22,13 +22,13 @@
     		<div class="modal-body">
 				<?php
 				$staffarray = array($row['staffname']);
-				$implodeArray = implode("', '", $staffarray);
+				$implodeArray = implode("','", $staffarray);
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
 						WHERE staffname = ('$implodeArray')
 						ORDER BY destinationId DESC;";
 				$result2 = $conn -> query($sql2);
-				if($result2 = num_rows > 0) {
+				if(mysqli_num_rows($result2) > 0) {
 					while($row2 = $result -> fetch_assoc()) {
 						echo "Kategori: " .$row2["category"];
 						echo "Tugasan: " .$row2["workname"];

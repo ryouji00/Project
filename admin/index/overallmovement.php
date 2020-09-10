@@ -8,10 +8,9 @@
 	<section class="container">
 		<section class="peopleout">
 			<?php
-			$sql = "SELECT d.staffid, d.starttrip, d.endtrip, s.staffname
-					FROM destination d, staff s
-					WHERE s.staffid = d.staffid
-					GROUP BY d.staffid;";
+			$sql = "SELECT s.staffname, s.staffunit
+					FROM staff s, destination d
+					WHERE s.staffid = d.staffid;";
 			$result = $conn -> query($sql);
 			while($row = $result -> fetch_assoc()) {
 				/*to count total trip for each person
@@ -28,7 +27,7 @@
 					$i++;
 				}
 				echo "Total trip: " .$i;*/
-				echo "<br>ID: " .$row['staffid']. "<br>Name: " .$row['staffname']. "<hr>";
+				echo "<br>Name: " .$row['staffname']. "<br> " .$row['staffunit']. "<hr>";
 			}
 			?>
 		</section>
@@ -37,15 +36,17 @@
 			<?php
 			$sql = "SELECT *
 					FROM destination d, staff s
-					WHERE s.staffid = d.staffid
-					ORDER BY d.starttrip DESC;";
+					WHERE s.staffid = d.staffid;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
 				while($row = $result -> fetch_assoc()) {
 					echo "<br>Name: " .$row['staffname'];
-					echo "<br>Desination: " .$row['destinationname'];
-					echo "<br>Start trip: " .$row['starttrip']. " to " .$row['endtrip'];
-					echo "<br>Reason: " .$row['note']. "<hr>";
+					echo "<br>Category: " .$row['category'];
+					echo "<br>Name of work: " .$row['workname'];
+					echo "<br>Place been: " .$row['placename'];
+					echo "<br>Start trip: " .$row['tripstart']. " to " .$row['tripend'];
+					echo "<br>Time start: " .$row['timestart']. " to " .$row['timeend']. "<br>";
+					echo "<hr>";
 				}
 			}
 			?>

@@ -79,10 +79,11 @@ th {
     align-content: center;
     background-color: white;
     border-style: solid;
-    width: 300px;
+    max-width: 500px;
     padding-left: 20px;
     margin-left: 20px;
     box-shadow: 5px 10px #888888;
+    padding-right: 20px;
 }
 
 .peopleout {
