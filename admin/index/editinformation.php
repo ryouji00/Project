@@ -74,6 +74,7 @@
 				<br>
 				<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				<br>
+				<lable>Change category: </lable>
 				<select name="newcategory">
 					<option value="Kategori">Kategori</option>
 					<option value="Mesyuarat">Mesyuarat</option>
