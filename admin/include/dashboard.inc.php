@@ -25,7 +25,7 @@
 				$implodeArray = implode("', '", $staffarray);
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
-						WHERE staffname LIKE ('$implodeArray')
+						WHERE staffname = ('$implodeArray')
 						ORDER BY destinationId DESC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 = num_rows > 0) {
