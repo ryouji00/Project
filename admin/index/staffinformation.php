@@ -45,7 +45,7 @@
 			</tbody>
 		</table>
 	</div>
-		<!-- Result
+		<!-- Result -->
 		<?php
 		if(isset($_GET['search-button'])) {	
 			$searchname = mysqli_real_escape_string($conn, $_GET['search']);
@@ -65,7 +65,7 @@
 				echo "There is 0 results";
 			}
 		}
-		?> -->
+		?>
 		</form>
 	</section>
 	<script>

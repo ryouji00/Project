@@ -7,7 +7,7 @@ require "header.php";
 <head>
 	<meta charset="utf-8">
 	<meta name="description" content="This is an example of meta description.This will often show up in search result.">
-	<meta name="viewport" content="width=device-width",initial-scale=1>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login Form</title>
 	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
