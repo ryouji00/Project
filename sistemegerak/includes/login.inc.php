@@ -51,6 +51,6 @@ if(isset($_POST['login-submit'])){
 
 }
 else{
-	header("Location: ../form.php?form=success");
+	header("Location: ../login.php?login=success");
 	exit();
 }
