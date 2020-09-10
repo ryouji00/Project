@@ -9,10 +9,6 @@
 	<td><?php echo $row["staffunit"];?></td>
 	<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
 </tr>
-<!-- Transfer grabed name to another page -->
-<?php
-$staffarray = array($row['staffname']);
-?>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">

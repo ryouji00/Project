@@ -5,13 +5,13 @@ session_start();
 <!DOCTYPE html>
 <html>
 	<head>
-		<a href="http://localhost/Project/admin/staffinformation.php">
-			<div id="logo">
+		<div id="logo">
+			<a href="http://localhost/Project/admin/staffinformation.php">
 				<img class="firstimg" src="../img/jatanegara2.png" width="160">
 				<img class="secondimg" src="../img/kkm2.png" width="160">
-				<span><h1 class="tajuk">Sistem E-Pergerakan Pegawai</h1></span>
-			</div>
-		</a>
+			</a>
+			<h1 class="tajuk">Sistem E-Pergerakan Pegawai</h1>
+		</div>
 		<header>
 			<div>
 				<nav class="navbar navbar-expand-lg navbar-light bg-light toggled">
