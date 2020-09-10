@@ -1,5 +1,5 @@
 	<?php require_once "header.php";?>
-	<title>Sistem E-Gerak | Carian Pegawai</title>
+	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
 <style>
 </style>
