@@ -36,7 +36,8 @@
 			<?php
 			$sql = "SELECT *
 					FROM destination d, staff s
-					WHERE s.staffid = d.staffid;";
+					WHERE s.staffid = d.staffid
+					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
 				while($row = $result -> fetch_assoc()) {
