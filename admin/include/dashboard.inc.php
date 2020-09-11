@@ -5,7 +5,7 @@
 </script>
 <tr>
 	<td class="bil"><?php echo $i;?></td>
-	<td><?php echo $row["staffname"];?></td>
+	<td><?php echo $row["staffname"]; $staffarray = array($row['staffname']);?></td>
 	<td><?php echo $row["staffunit"];?></td>
 	<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
 </tr>
@@ -28,8 +28,8 @@
 						WHERE staffname = ('$implodeArray')
 						ORDER BY destinationId DESC;";
 				$result2 = $conn -> query($sql2);
-				if(mysqli_num_rows($result2) > 0) {
-					while($row2 = $result -> fetch_assoc()) {
+				if($result2 -> num_rows > 0) {
+					while($row2 = $result2 -> fetch_assoc()) {
 						echo "Kategori: " .$row2["category"];
 						echo "Tugasan: " .$row2["workname"];
 						echo "<br>Lokasi: " .$row2["placename"];
