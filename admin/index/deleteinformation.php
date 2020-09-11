@@ -16,6 +16,14 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
+						<div class="modal-body">
+							<b><?php 
+							echo "Name: " .$row['staffname'];
+							echo "<br>Username: " .$row['staffusername'];
+							echo "<br>E-Mail: " .$row['staffemail'];
+							echo "<br>Unit: " .$row['staffunit'];
+							?></b>
+						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 							<button name="deletebutton" type="button" class="btn btn-danger">Delete</button>
