@@ -38,17 +38,15 @@
         // delete trip confirmation
         $confirmdestid = $_SESSION['confirmdestid'];
         $searchid = $_SESSION['search'];
-		if(isset($_GET['button-delete'])) {
-			if(isset($_GET['confirmdelete'])) {
-				$sql = "DELETE FROM destination
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE)								
-				{
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
-				}
+		if(isset($_POST['deletebutton'])) {
+			$sql = "DELETE FROM destination
+					WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+			if ($conn->query($sql) === TRUE)								
+			{
+				echo "<hr>Record updated successfully";
+			}
+			else {
+				echo "<hr>Error updating record: " . $conn->error;
 			}
 		}
 		?>

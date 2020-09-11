@@ -25,7 +25,7 @@
 			<!-- Retrieve data -->
 			<?php
 			$searchid = $_SESSION['search'];
-			$sql = "SELECT staffname, staffemail, staffusername
+			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
 					WHERE staffname = '$searchid';";
 			$result = $conn -> query($sql);
@@ -35,12 +35,13 @@
 					WHERE staffid = '$searchid'";
 			$result2 = $conn -> query($sql2);
 			?>
-			<form method="get" action="editinformation.php">
+			<form method="get" action="staffinformationresult.php">
 				<h4>Change staff information</h4>
 				<!-- <?php 
 				echo "Name: " .$row['staffname'];
 				echo "<br>Username: " .$row['staffusername'];
 				echo "<br>E-Mail: " .$row['staffemail'];
+				echo "<br>" .$row['staffunit'];
 				?> -->
 				<br>
 				<!-- Change Staff Name -->
@@ -93,20 +94,21 @@
 						echo "<br>Place held: " .$row2['placename'];
 						echo "<br>From: " .$newDate. " to " .$newDate2;
 						echo "<br>Time start: " .$newTime. " to " .$newTime2;
+						include "../include/edittripinformation.inc.php";
 					}
 				}
 				else {
 					echo "No  record";
-				}		
+				}
 				?>
 				<br>
-				<!-- Confirming trip -->
+				<!-- Confirming trip
 				<div>
 					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				</div>
-				<br>
+				<br> -->
 				<!-- Change category -->
-				<div>
+				<!-- <div>
 					<lable>Change category: </lable>
 					<select name="newcategory">
 						<option value="Kategori">Kategori</option>
@@ -117,28 +119,28 @@
 					</select>
 					<button class="btn btn-secondary btn-sm" name="change-category">edit</button>
 				</div>
-				<br>
-				<!-- Change placename -->
+				<br> -->
+				<!-- Change placename
 				<div>
 					<input type="text" name="newdestname" placeholder="Enter new for place being held">
 					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
 				</div>
-				<br>
-				<!-- Change workname -->
+				<br> -->
+				<!-- Change workname
 				<div>
 					<input type="text" name="newworkname" placeholder="Enter new name for the work">
 					<button class="btn btn-secondary btn-sm" name="change-workname">edit</button>
 				</div>
-				<br>
-				<!-- Change date -->
+				<br> -->
+				<!-- Change date
 				<div>
 					<label>Change date: </label>
 					<input id="DTformat" type="date" name="newstart">
 					<input id="DTformat" type="date" name="newend">
 					<button class="btn btn-secondary btn-sm" name="change-date">edit</button>
 				</div>
-				<br>
-				<!-- Change time -->
+				<br> -->
+				<!-- Change time
 				<div>
 					<label>Change time: </label>
 					<input id="DTformat" type="time" name="newstarttime">
@@ -146,11 +148,11 @@
 					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
 				</div>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
+				<br> -->
+				<!-- Delete trip
 				<br>
-				<!-- Delete trip -->
-				<br>
-				<!-- button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button> -->
-				<?php include "../include/deletetrip.inc.php";?>
+				button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button> -->
+				<?php include "../include/deletetrip.inc.php";?> -->
 			<?php
 			$confirmdestid = $_GET['confirmdestid'];
 			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
