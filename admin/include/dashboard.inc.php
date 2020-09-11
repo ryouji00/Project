@@ -29,14 +29,13 @@
 						ORDER BY destinationId DESC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
-					while($row2 = $result2 -> fetch_assoc()) {
-						echo "Kategori: " .$row2["category"];
-						echo "Tugasan: " .$row2["workname"];
-						echo "<br>Lokasi: " .$row2["placename"];
-						echo "<br>Tarikh mula:" .$row2["tripstart"];
-						echo "Tarikh akhir: " .$row2["tripend"];
-						echo "<br>Masa mula: " .$row2["starttime"];
-						echo "Masa akhir: " .$row2["timeend"];
+					include "dateformat.inc.php";
+					while($row = $result2 -> fetch_assoc()) {
+						echo "Kategori: " .$row["category"];
+						echo "Tugasan: " .$row["workname"];
+						echo "<br>Lokasi: " .$row["placename"];
+						echo "<br>Dari:" .$newDate. " hingga " .$newDate2;
+						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
 					}
 				}
 				else {
