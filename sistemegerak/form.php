@@ -10,8 +10,19 @@
   <link rel="stylesheet" type="text/css" href="css/whole.css">
 
  	<div class="form-main">
- 		<section class="section-default"> 
-
+		<section id="welcomedetail">
+ 			<?php
+			$name = $_SESSION['idstaff'];
+			$sql = "SELECT *
+					FROM staff
+					WHERE staffid = '$name';";
+			$result = $conn -> query($sql);
+			$row = $result -> fetch_assoc();
+			echo $row['staffname'];
+			echo $row['staffunit'];
+			?>
+		</section>
+ 		<section class="section-default">
 			<h1>Form</h1>
 			<form action="includes/logout.inc.php" method="post">
 				<select id="tempat" name="place-go">
