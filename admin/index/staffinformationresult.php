@@ -22,25 +22,7 @@
 			<?php
 				require "deleteinformation.php";
 			?>
-				<!-- <button class="btn btn-secondary" name="button-edit" type="submit">Edit</button> -->
 			<form method="POST" action="staffinformationresult.php">
-				<!-- Modal
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h3 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete?</h3>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-								<button name="deletebutton" type="button" class="btn btn-danger">Delete</button>
-							</div>
-						</div>
-					</div>
-				</div> -->
 				<!-- <h3>Are you sure you want to delete?</h3>
 				<form action="staffinformation.php" method="post">
 					<a class="btn btn-secondary" href="staffinformationresult.php" role="button">Cancel</a>
@@ -95,7 +77,6 @@
 					<input type="text" name="newname" placeholder="Enter new name">
 					<button class="btn btn-secondary btn-sm" name="change-name">edit</button>
 				</div>
-
 				<br>
 				<!-- Change Staff Username -->
 				<div>
@@ -111,22 +92,21 @@
 				<br>
 				<!-- Change Staff Unit -->
 				<label>Choose new unit: </label>
-				<select>
-					<option>--Choose--</option>
-					<option value="Unit Rangkaian">Unit Rangkaian</option>
-					<option value="Unit Sokongan Teknikal">Unit Sokongan Teknikal</option>
-					<option value="Unit Operasi dan Pusat">Unit Operasi dan Pusat</option>
-					<option value="Unit Keselamatan">Unit Keselamatan</option>
-					<option value="Unit Pemindanan Tex">Unit Pemindanan Tex</option>
-					<option value="Unit Pengaturcaraan">Unit Pengaturcaraan</option>
-					<option value="Unit Farmasi Pengurusan dan Kejuruteraan">Unit Farmasi Pengurusan dan Kejuruteraan</option>
-					<option value="Unit Aplikasi Kesihatan">Unit Aplikasi Kesihatan</option>
-					<option value="Unit Perubatan">Unit Perubatan</option>
-					<option value="Unit Aplikasi HIS">Unit Aplikasi HIS</option>
-					<option value="Unit Dasar dan Penilaian Projek">Unit Dasar dan Penilaian Projek</option>
-					<option value="Unit Perolehan SQA">Unit Perolehan SQA</option>
-					<option value="Unit Pengurusan, Pentadbiran, Kewangan">Unit Pengurusan, Pentadbiran, Kewangan</option>
-					<option value="Unit Perancangan dan Inovasi ICT">Unit Perancangan dan Inovasi ICT</option>
+				<select name="newunit">
+					<option value="0">Unit Rangkaian</option>
+					<option value="1">Unit Sokongan Teknikal</option>
+					<option value="2">Unit Operasi dan Pusat</option>
+					<option value="3">Unit Keselamatan</option>
+					<option value="4">Unit Pemindanan Tex</option>
+					<option value="5">Unit Pengaturcaraan</option>
+					<option value="6">Unit Farmasi Pengurusan dan Kejuruteraan</option>
+					<option value="7">Unit Aplikasi Kesihatan</option>
+					<option value="8">Unit Perubatan</option>
+					<option value="9">Unit Aplikasi HIS</option>
+					<option value="10">Unit Dasar dan Penilaian Projek</option>
+					<option value="12">Unit Perolehan SQA</option>
+					<option value="13">Unit Pengurusan, Pentadbiran, Kewangan</option>
+					<option value="14">Unit Perancangan dan Inovasi ICT</option>
 				</select>
 				<button class="btn btn-secondary btn-sm" name="change-email">edit</button>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
@@ -135,10 +115,13 @@
 				<?php
 				if($result -> num_rows > 0) {
 					while ($row2 = $result2 -> fetch_assoc()) {
-						echo "Destination ID: " .$row2['destinationid'];
-						echo "<br>Destination name: " .$row2['workname'];
-						echo "<br>Start date: " .$row2['tripstart'];
-						echo "<br>End date:" .$row2['tripend'];
+						include "include/dateformat.inc.php";
+						echo "<br>Trip ID: " .$row2['destinatioId'];
+						echo "<br>Category: " .$row2['category'];
+						echo "<br>Work name: " .$row2['workname'];
+						echo "<br>Place held: " .$row2['placename'];
+						echo "<br>From: " .$newDate. " to " .$newDate2;
+						echo "<br>Time start: " .$newTime. " to " .$newTime2;
 					}
 				}
 				else {
@@ -146,24 +129,53 @@
 				}		
 				?>
 				<br>
+				<!-- Confirming trip -->
 				<div>
 					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				</div>
 				<br>
-				<!-- Change place name -->
+				<!-- Change category -->
 				<div>
-					<input type="text" name="newplacename" placeholder="Enter new place name">
+					<lable>Change category: </lable>
+					<select name="newcategory">
+						<option value="Kategori">Kategori</option>
+						<option value="Mesyuarat">Mesyuarat</option>
+						<option value="Kursus">Kursus</option>
+						<option value="Bengkel">Bengkel</option>
+						<option value="Lawatan Tapak">Lawatan Tapak</option>
+					</select>
+					<button class="btn btn-secondary btn-sm" name="change-category">edit</button>
+				</div>
+				<br>
+				<!-- Change placename -->
+				<div>
+					<input type="text" name="newdestname" placeholder="Enter new for place being held">
 					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
 				</div>
 				<br>
-				<!-- Change date trip -->
+				<!-- Change workname -->
 				<div>
-					<input id="changedate" type="date" name="newstart" placeholder="Enter start date">
-					<label>End date</label>
-					<input id="changedate" type="date" name="newend" placeholder="Enter end date">
+					<input type="text" name="newworkname" placeholder="Enter new name for the work">
+					<button class="btn btn-secondary btn-sm" name="change-workname">edit</button>
+				</div>
+				<br>
+				<!-- Change date -->
+				<div>
+					<label>Change date: </label>
+					<input id="DTformat" type="date" name="newstart">
+					<input id="DTformat" type="date" name="newend">
 					<button class="btn btn-secondary btn-sm" name="change-date">edit</button>
 				</div>
-				<label>Start date</label>
+				<br>
+				<!-- Change time -->
+				<div>
+					<label>Change time: </label>
+					<input id="DTformat" type="time" name="newstarttime">
+					<input id="DTformat" type="time" name="newendtime">
+					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
+				</div>
+				<br>
+				<button class="btn btn-secondary btn-sm" name="delete-trip">Delete trip</button>
 				<!-- Delete trip -->
 				<br>
 				<button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button>
@@ -183,7 +195,7 @@
 					echo "<hr>Error updating record: " . $conn->error;
 				}
 			}
-			// change username
+			//change username
 			elseif(isset($_GET['change-username'])) {
 				$newusername = $_GET['newusername'];
 				$sql = "UPDATE staff
@@ -196,7 +208,7 @@
 					echo "<hr>Error updating record: " . $conn->error;
 				}
 			}
-			// change email
+			//change email
 			elseif(isset($_GET['change-email'])) {
 				$newemail = $_GET['newemail'];
 				$sql = "UPDATE staff
@@ -209,9 +221,35 @@
 					echo "<hr>Error updating record: " . $conn->error;
 				}
 			}
-			// change name of the place
+			//change unit
+			elseif(isset($_GET['change-unit'])) {
+				$newunit = $_GET['newunit'];
+				$sql = "UPDATE staff
+						SET staffunit = '$newunit'
+						WHERE staffid = '$searchid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change category
+			elseif(isset($_GET['change-category'])) {
+				$newcat = $_GET['newcategory'];
+				$sql = "UPDATE destination
+						SET category = '$newcat'
+						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change placename
 			elseif(isset($_GET['change-destname'])) {
-				$newdestname = $_GET['newplacename'];
+				$newdestname = $_GET['newdestname'];
 				$sql = "UPDATE destination
 						SET placename = '$newdestname'
 						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
@@ -222,12 +260,39 @@
 					echo "<hr>Error updating record: " . $conn->error;
 				}
 			}
-			// change trip date
+			//change workname
+			elseif(isset($_GET['change-workname'])) {
+				$newworkname = $_GET['newworkname'];
+				$sql = "UPDATE destination
+						SET workname = '$newworkname'
+						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change date
 			elseif(isset($_GET['change-date'])) {
 				$newstart = $_GET['newstart'];
 				$newend = $_GET['newend'];
 				$sql = "UPDATE destination
 						SET tripstart = '$newstart', tripend = '$newend'
+						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change date
+			elseif(isset($_GET['change-time'])) {
+				$newstarttime = $_GET['newstarttime'];
+				$newendtime = $_GET['newendtime'];
+				$sql = "UPDATE destination
+						SET timestart = '$newstarttime', timeend = '$newendtime'
 						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
