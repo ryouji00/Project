@@ -3,8 +3,9 @@
   $('#myInput').trigger('focus')
 })
 </script>
+	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Delete</button>
 	<section>
-		<form method="POST" action="deleteinformation.php">
+		<form method="POST" action="staffinformationresult.php">
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
@@ -14,9 +15,6 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-						</div>
-						<div class="modal-body">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam dolorem fugit, laudantium hic vitae nihil possimus eligendi minima! Accusantium quidem nisi tempore laborum debitis quos similique sunt eum magnam tenetur?</p>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -34,7 +32,6 @@
 				<button type="submit" name="deletebutton">Delete</button>
 				<button type="reset" value="Reset">Reset</button> -->
 		</form>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestiae aspernatur sint perferendis sed in culpa ullam nam tempora provident eveniet eligendi inventore esse animi facere, distinctio at labore reiciendis.</p>
 		<?php
 		$confirmstaff = $_SESSION['search'];
 		if(isset($_POST['deletebutton'])) {

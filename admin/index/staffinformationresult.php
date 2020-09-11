@@ -19,12 +19,12 @@
 			echo "<br>Unit: " .$row['staffunit'];
 			?>
 			<br>
-			<form method="get">
-				<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Delete</button>
+			<?php
+				require "deleteinformation.php";
+			?>
 				<!-- <button class="btn btn-secondary" name="button-edit" type="submit">Edit</button> -->
-			</form>
 			<form method="POST" action="staffinformationresult.php">
-				<!-- Modal -->
+				<!-- Modal
 				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
@@ -40,7 +40,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- <h3>Are you sure you want to delete?</h3>
 				<form action="staffinformation.php" method="post">
 					<a class="btn btn-secondary" href="staffinformationresult.php" role="button">Cancel</a>
