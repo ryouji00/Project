@@ -10,7 +10,8 @@
 			<?php
 			$sql = "SELECT s.staffname, s.staffunit
 					FROM staff s, destination d
-					WHERE s.staffid = d.staffid;";
+					WHERE s.staffid = d.staffid
+					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			while($row = $result -> fetch_assoc()) {
 				/*to count total trip for each person
