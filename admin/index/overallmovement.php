@@ -41,11 +41,15 @@
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
 				while($row = $result -> fetch_assoc()) {
+					$orgDate = $row['tripstart'];
+					$orgDate2 = $row['tripend'];
+					$newDate = date("m-d-Y", strtotime($orgDate));
+					$newDate2 = date("m-d-Y", strtotime($orgDate2));
 					echo "<br>Name: " .$row['staffname'];
 					echo "<br>Category: " .$row['category'];
 					echo "<br>Name of work: " .$row['workname'];
 					echo "<br>Place been: " .$row['placename'];
-					echo "<br>Start trip: " .$row['tripstart']. " to " .$row['tripend'];
+					echo "<br>Start trip: " .$newDate. " to " .$newDate2;
 					echo "<br>Time start: " .$row['timestart']. " to " .$row['timeend']. "<br>";
 					echo "<hr>";
 				}
