@@ -63,12 +63,13 @@
 				<p>Change trip information</p>
 				<?php
 				while ($row2 = $result2 -> fetch_assoc()) {
+					include "dateformat.inc.php";
 					echo "<br>Trip ID: " .$row2['destinatioId'];
 					echo "<br>Category: " .$row2['category'];
 					echo "<br>Work name: " .$row2['workname'];
 					echo "<br>Place held: " .$row2['placename'];
-					echo "<br>Date: " .$row2['tripstart']. " to " .$row2['tripend'];
-					echo "<br>Time: " .$row2['timestart']. " to " .$row2['timeend'];
+					echo "<br>From: " .$newDate. " to " .$newDate2;
+					echo "<br>Time start: " .$newTime. " to " .$newTime2;
 				}
 				?>
 				<br>
