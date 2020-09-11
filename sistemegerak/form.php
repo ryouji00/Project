@@ -12,6 +12,7 @@
  	<div class="form-main">
 		<section id="welcomedetail">
  			<?php
+			 //aku tak tau camne kau pass value session ni
 			$name = $_SESSION['idstaff'];
 			$sql = "SELECT *
 					FROM staff
