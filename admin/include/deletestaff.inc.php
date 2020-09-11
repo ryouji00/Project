@@ -5,7 +5,7 @@
 </script>
 	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Delete</button>
 	<section>
-		<form method="POST" action="staffinformationresult.php">
+		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
@@ -31,14 +31,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <h3>Are you sure you want to delete?</h3>
-			<form action="staffinformation.php" method="post">
-				<a class="btn btn-secondary" href="staffinformationresult.php" role="button">Cancel</a>
-				<button id="confirmdelete" type="button" class="btn btn-danger">Delete</button>
-				<label>Enter staff name again to delete</label>
-				<input type="text" name="idstaff" required>
-				<button type="submit" name="deletebutton">Delete</button>
-				<button type="reset" value="Reset">Reset</button> -->
 		</form>
 		<?php
 		$confirmstaff = $_SESSION['search'];

@@ -20,36 +20,7 @@
 			?>
 			<br>
 			<?php
-				require "deleteinformation.php";
-			?>
-			<form method="POST" action="staffinformationresult.php">
-				<!-- <h3>Are you sure you want to delete?</h3>
-				<form action="staffinformation.php" method="post">
-					<a class="btn btn-secondary" href="staffinformationresult.php" role="button">Cancel</a>
-					<button id="confirmdelete" type="button" class="btn btn-danger">Delete</button>
-					<label>Enter staff name again to delete</label>
-					<input type="text" name="idstaff" required>
-					<button type="submit" name="deletebutton">Delete</button>
-					<button type="reset" value="Reset">Reset</button> -->
-			</form>
-			<hr>
-			<!-- Delete targeted staff -->
-			<?php
-			$confirmstaff = $_SESSION['search'];
-			if(isset($_POST['deletebutton'])) {
-				echo "Matching<br>";
-				$sql = "DELETE FROM staff
-						WHERE staffid = '$confirmstaff';";
-				$sql2 = "DELETE FROM destination
-						WHERE staffid = '$confirmstaff';";
-				$conn -> query($sql2);
-				if ($conn -> query($sql) === TRUE) {
-					echo "Record deleted successfully";
-				}
-				else {
-					echo "Error deleting record: " . $conn->error;
-				}
-			}
+				include "../include/deletestaff.inc.php";
 			?>
 			<!-- Retrieve data -->
 			<?php
@@ -115,7 +86,7 @@
 				<?php
 				if($result -> num_rows > 0) {
 					while ($row2 = $result2 -> fetch_assoc()) {
-						include "include/dateformat.inc.php";
+						include "../include/dateformat.inc.php";
 						echo "<br>Trip ID: " .$row2['destinatioId'];
 						echo "<br>Category: " .$row2['category'];
 						echo "<br>Work name: " .$row2['workname'];
@@ -174,14 +145,15 @@
 					<input id="DTformat" type="time" name="newendtime">
 					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
 				</div>
+				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
-				<button class="btn btn-secondary btn-sm" name="delete-trip">Delete trip</button>
 				<!-- Delete trip -->
 				<br>
-				<button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button>
-				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
+				<!-- button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button> -->
+				<?php include "../include/deletetrip.inc.php";?>
 			<?php
 			$confirmdestid = $_GET['confirmdestid'];
+			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
 			// change staff name
 			if(isset($_GET['change-name'])) {
 				$newname = $_GET['newname'];
@@ -299,21 +271,6 @@
 				}
 				else {
 					echo "<hr>Error updating record: " . $conn->error;
-				}
-			}
-			// delete trip confirmation
-			elseif(isset($_GET['delete-trip'])) {
-				include("include/deletetrip.inc.php");
-				if(isset($_GET['confirmdelete'])) {
-					$sql = "DELETE FROM destination
-							WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
-					if ($conn->query($sql) === TRUE)								
-					{
-						echo "<hr>Record updated successfully";
-					}
-					else {
-						echo "<hr>Error updating record: " . $conn->error;
-					}
 				}
 			}
 			?>
