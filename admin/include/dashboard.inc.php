@@ -5,9 +5,9 @@
 </script>
 <tr>
 	<td class="bil"><?php echo $i;?></td>
-	<td><?php echo $row["staffname"]; $staffarray = array($row['staffname']);?></td>
+	<td><button class="btn" data-toggle="modal" data-target="#exampleModal"><?php echo $row["staffname"];?></button></td>
 	<td><?php echo $row["staffunit"];?></td>
-	<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
+	<!-- <td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td> -->
 </tr>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

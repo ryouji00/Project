@@ -20,7 +20,7 @@
 					<td>Bil.</td>
 					<td>Name</td>
 					<td>Unit</td>
-					<td>Action</td>
+					<!-- <td>Action</td> -->
 				</tr>
 			</thead>
 			<tbody id="tablefortoday" class="table-responsive-sm">

@@ -3,7 +3,7 @@
   $('#myInput').trigger('focus')
 })
 </script>
-	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#Modal">Delete</button>
+	<button class="btn btn-danger btn-sm mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#Modal">Delete trip</button>
 	<section>
 		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
@@ -18,12 +18,18 @@
 						</div>
 						<div class="modal-body">
                             <b><?php
-                            include "dateformat.inc.php";
-						    echo "Kategori: " .$row["category"];
-						    echo "Tugasan: " .$row["workname"];
-						    echo "<br>Lokasi: " .$row["placename"];
-						    echo "<br>Dari:" .$newDate. " hingga " .$newDate2;
-						    echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+							$sql = "SELECT *
+									FROM destination
+									WHERE staffid = 7";
+							$result = $conn -> query($sql);
+							while($row2 = $result -> fetch_assoc()) {
+                            	include "dateformat.inc.php";
+						    	echo "Kategori: " .$row2["category"];
+						    	echo "Tugasan: " .$row2["workname"];
+						    	echo "<br>Lokasi: " .$row2["placename"];
+						    	echo "<br>Dari:" .$newDate. " hingga " .$newDate2;
+								echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+							}
 							?></b>
 						</div>
 						<div class="modal-footer">
@@ -51,5 +57,3 @@
 		}
 		?>
 	</section>
-	<!-- Akhir -->
-	<?php include "footer.php";?>

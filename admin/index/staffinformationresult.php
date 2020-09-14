@@ -92,7 +92,7 @@
 						WHERE staffid = 7;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
-					while ($row2 = $result2 -> fetch_assoc()) {
+					while ($row2 = $result -> fetch_assoc()) {
 						include "../include/dateformat.inc.php";
 						echo "<br>Trip ID: " .$row2['destinationId'];
 						echo "<br>Category: " .$row2['category'];
@@ -100,15 +100,15 @@
 						echo "<br>Place held: " .$row2['placename'];
 						echo "<br>From: " .$newDate. " to " .$newDate2;
 						echo "<br>Time start: " .$newTime. " to " .$newTime2;
+						require "../include/edit.inc.php";
 					}
-					require "edit.inc.php";
 				}
 				else {
 					echo "No  record";
 				}
 				?>
 				<br>
-				
+			</form>
 			<?php
 			$confirmdestid = $_GET['confirmdestid'];
 			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];

@@ -39,7 +39,7 @@
 			</div>
 		</form>
 		<?php
-		$confirmstaff = $_SESSION['search'];
+		$confirmstaff = $_SESSION['staffid'];
 		if(isset($_POST['deletebutton'])) {
 			echo "Matching<br>";
 			$sql = "DELETE FROM staff

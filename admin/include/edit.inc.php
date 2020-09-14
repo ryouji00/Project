@@ -1,4 +1,4 @@
-<!-- Confirming trip -->
+				<!-- Confirming trip -->
 				<div>
 					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				</div>
@@ -46,6 +46,4 @@
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
 				<!-- Delete trip -->
-				<br>
-				<button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button>
 				<?php include "../include/deletetrip.inc.php";?>
