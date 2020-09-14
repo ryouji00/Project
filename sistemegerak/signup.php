@@ -40,26 +40,30 @@
 
  	?>
  	<form action="includes/signup.inc.php" method="post"> 
-  <input type="text" name="nama" placeholder="Name">
-  <select id="jawatan" name="position" placeholder="Jawatan">
-   <option value="0">Admin</option>
-   <option value="1">Staff</option>
+    <input type="text" name="nama" placeholder="Name">
+    <select id="jawatan" name="position" placeholder="Jawatan">
+	<option value="0">Jawatan</option>
+   <option value="1">Admin</option>
+   <option value="2">Staff</option>
+    </select>
    <select id="Bahagian" name="unit" placeholder="Unit">
-   <option value="0">Pejabat CIO</option>
-   <option value="1">Unit Perolehan Dan SQA</option>
-   <option value="2">Unit Dasar Dan Penilaian Projek</option>
-   <option value="3">Unit Pengurusan Pentadbiran Kewangan</option>
-   <option value="4">Unit Perancangan Dan Inovasi ICT </option>
-   <option value="5">Unit Aplikasi HIS</option>
-   <option value="6">Unit Aplikasi Perubatan</option>
-   <option value="7">Unit Aplikasi Kesihatan</option>
-   <option value="8">Unit Aplikasi Farmasi Pengurusan Dan Kejuruteraan</option>
-   <option value="9">Unit Pengaturcaraan</option>
-   <option value="10">Unit Operasi Dan Pusat</option>
-   <option value="11">Unit Keselamatan</option>
-   <option value="12">Unit Sokongan Teknikal</option>
-   <option value="13">Unit Rangkaian</option>
-   <option value="14">Unit Pemindahan TEK</option>
+   <option value="0">Bahagian</option>
+   <option value="1">Pejabat CIO</option>
+   <option value="2">Unit Perolehan Dan SQA</option>
+   <option value="3">Unit Dasar Dan Penilaian Projek</option>
+   <option value="4">Unit Pengurusan Pentadbiran Kewangan</option>
+   <option value="5">Unit Perancangan Dan Inovasi ICT </option>
+   <option value="6">Unit Aplikasi HIS</option>
+   <option value="7">Unit Aplikasi Perubatan</option>
+   <option value="8">Unit Aplikasi Kesihatan</option>
+   <option value="9">Unit Aplikasi Farmasi Pengurusan Dan Kejuruteraan</option>
+   <option value="10">Unit Pengaturcaraan</option>
+   <option value="11">Unit Operasi Dan Pusat</option>
+   <option value="12">Unit Keselamatan</option>
+   <option value="13">Unit Sokongan Teknikal</option>
+   <option value="14">Unit Rangkaian</option>
+   <option value="15">Unit Pemindahan TEK</option>
+   </select>
  	<input type="text" name="uid" placeholder="Username">
  	<input type="text" name="mail" placeholder="E-mail">
  	<input type="password" name="pwd" placeholder="Password">
