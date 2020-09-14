@@ -21,20 +21,20 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$id = $_SESSION['staffid'];
+				$_SESSION['staffid'] = $row['staffid'];
+				$id = $row['staffid'];
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
-						WHERE staffname = '$id'
+						WHERE staffid = 7
 						ORDER BY tripstart DESC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
-					include "dateformat.inc.php";
-					while($row = $result2 -> fetch_assoc()) {
+					while($row2 = $result2 -> fetch_assoc()) {
 						include "dateformat.inc.php";
-						echo "Kategori: " .$row["category"];
-						echo "Tugasan: " .$row["workname"];
-						echo "<br>Lokasi: " .$row["placename"];
-						echo "<br>Dari:" .$newDate. " hingga " .$newDate2;
+						echo "Kategori: " .$row2["category"];
+						echo "<br>Tugasan: " .$row2["workname"];
+						echo "<br>Lokasi: " .$row2["placename"];
+						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
 						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
 					}
 				}

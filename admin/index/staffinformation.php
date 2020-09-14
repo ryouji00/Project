@@ -34,9 +34,7 @@
 					$i = 1;
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_assoc()) {
-							$_SESSION['staffid'] = $row['staffid'];
 							require("../include/dashboard.inc.php");
-							$_SESSION['staffid'] = 1;
 							$i++;
 						}
 					}

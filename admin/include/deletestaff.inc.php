@@ -17,11 +17,17 @@
 							</button>
 						</div>
 						<div class="modal-body">
-							<b><?php 
-							echo "Name: " .$row['staffname'];
-							echo "<br>Username: " .$row['staffusername'];
-							echo "<br>E-Mail: " .$row['staffemail'];
-							echo "<br>Unit: " .$row['staffunit'];
+							<b><?php
+							$sql = "SELECT staffname, staffusername, staffid, staffemail, staffunit
+									FROM staff
+									WHERE staffid = 7";
+							$result = $conn -> query($sql);
+							while($row = $result -> fetch_assoc()) {
+								echo "Name: " .$row['staffname'];
+								echo "<br>Username: " .$row['staffusername'];
+								echo "<br>E-Mail: " .$row['staffemail'];
+								echo "<br>" .$row['staffunit'];
+							}
 							?></b>
 						</div>
 						<div class="modal-footer">

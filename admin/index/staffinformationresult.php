@@ -9,31 +9,32 @@
 			<?php
 			$id = $_SESSION['staffid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
-					FROM staffid
-					WHERE staffid = '$id';";
+					FROM staff
+					WHERE staffid = 7;";
 			$result = $conn -> query($sql);
-			while($row = $result -> fetch_assoc()) {
-				echo "<br>Name: " .$row['staffname'];
-				echo "<br>Username: " .$row['staffusername'];
-				echo "<br>E-Mail: " .$row['staffemail'];
-				echo "<br>Unit: " .$row['staffunit'];
+			if($result -> num_rows > 0) {
+				while($row = $result -> fetch_assoc()) {
+					echo "<br>Name: " .$row['staffname'];
+					echo "<br>Username: " .$row['staffusername'];
+					echo "<br>E-Mail: " .$row['staffemail'];
+					echo "<br>Unit: " .$row['staffunit'];
+				}
 			}
+			echo "<br>";
+			include "../include/deletestaff.inc.php";
 			?>
 			<br>
-			<?php
-				include "../include/deletestaff.inc.php";
-			?>
 			<!-- Retrieve data -->
 			<?php
 			$searchid = $_SESSION['staffid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
-					WHERE staffname = '$searchid';";
+					WHERE staffid = 7;";
 			$result = $conn -> query($sql);
 			$row = $result -> fetch_assoc();
 			$sql2 = "SELECT category, workname, tripstart, tripend
 					FROM destination
-					WHERE staffid = '$searchid'";
+					WHERE staffid = 7";
 			$result2 = $conn -> query($sql2);
 			?>
 			<form method="get" action="staffinformationresult.php">
@@ -88,76 +89,26 @@
 				<?php
 				$sql = "SELECT *
 						FROM destination
-						WHERE staffid = '$searchid';";
+						WHERE staffid = 7;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result2 -> fetch_assoc()) {
 						include "../include/dateformat.inc.php";
-						echo "<br>Trip ID: " .$row2['destinatioId'];
+						echo "<br>Trip ID: " .$row2['destinationId'];
 						echo "<br>Category: " .$row2['category'];
 						echo "<br>Work name: " .$row2['workname'];
 						echo "<br>Place held: " .$row2['placename'];
 						echo "<br>From: " .$newDate. " to " .$newDate2;
 						echo "<br>Time start: " .$newTime. " to " .$newTime2;
-						include "../include/edittripinformation.inc.php";
 					}
+					require "edit.inc.php";
 				}
 				else {
 					echo "No  record";
 				}
 				?>
 				<br>
-				<!-- Confirming trip -->
-				<div>
-					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
-				</div>
-				<br>
-				<!-- Change category -->
-				<div>
-					<lable>Change category: </lable>
-					<select name="newcategory">
-						<option value="Kategori">Kategori</option>
-						<option value="Mesyuarat">Mesyuarat</option>
-						<option value="Kursus">Kursus</option>
-						<option value="Bengkel">Bengkel</option>
-						<option value="Lawatan Tapak">Lawatan Tapak</option>
-					</select>
-					<button class="btn btn-secondary btn-sm" name="change-category">edit</button>
-				</div>
-				<br>
-				<!-- Change placename -->
-				<div>
-					<input type="text" name="newdestname" placeholder="Enter new for place being held">
-					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
-				</div>
-				<br>
-				<!-- Change workname -->
-				<div>
-					<input type="text" name="newworkname" placeholder="Enter new name for the work">
-					<button class="btn btn-secondary btn-sm" name="change-workname">edit</button>
-				</div>
-				<br>
-				<!-- Change date -->
-				<div>
-					<label>Change date: </label>
-					<input id="DTformat" type="date" name="newstart">
-					<input id="DTformat" type="date" name="newend">
-					<button class="btn btn-secondary btn-sm" name="change-date">edit</button>
-				</div>
-				<br>
-				<!-- Change time -->
-				<div>
-					<label>Change time: </label>
-					<input id="DTformat" type="time" name="newstarttime">
-					<input id="DTformat" type="time" name="newendtime">
-					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
-				</div>
-				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
-				<br>
-				<!-- Delete trip -->
-				<br>
-				button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button>
-				<?php include "../include/deletetrip.inc.php";?> -->
+				
 			<?php
 			$confirmdestid = $_GET['confirmdestid'];
 			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];

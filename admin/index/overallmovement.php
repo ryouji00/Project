@@ -41,12 +41,12 @@
 					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
-				while($row = $result -> fetch_assoc()) {
+				while($row2 = $result -> fetch_assoc()) {
 					require "../include/dateformat.inc.php";
-					echo "<br>Name: " .$row['staffname'];
-					echo "<br>Category: " .$row['category'];
-					echo "<br>Name of work: " .$row['workname'];
-					echo "<br>Place been: " .$row['placename'];
+					echo "<br>Name: " .$row2['staffname'];
+					echo "<br>Category: " .$row2['category'];
+					echo "<br>Name of work: " .$row2['workname'];
+					echo "<br>Place been: " .$row2['placename'];
 					echo "<br>From: " .$newDate. " to " .$newDate2;
 					echo "<br>Time start: " .$newTime. " to " .$newTime2;
 					echo "<hr>";
