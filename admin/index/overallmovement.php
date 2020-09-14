@@ -8,10 +8,10 @@
 	<section class="container">
 		<section class="peopleout">
 			<?php
-			$sql = "SELECT d.staffid, d.starttrip, d.endtrip, s.staffname
-					FROM destination d, staff s
+			$sql = "SELECT s.staffname, s.staffunit
+					FROM staff s, destination d
 					WHERE s.staffid = d.staffid
-					GROUP BY d.staffid;";
+					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			while($row = $result -> fetch_assoc()) {
 				/*to count total trip for each person
@@ -28,7 +28,7 @@
 					$i++;
 				}
 				echo "Total trip: " .$i;*/
-				echo "<br>ID: " .$row['staffid']. "<br>Name: " .$row['staffname']. "<hr>";
+				echo "<br>Name: " .$row['staffname']. "<br> " .$row['staffunit']. "<hr>";
 			}
 			?>
 		</section>
@@ -38,14 +38,18 @@
 			$sql = "SELECT *
 					FROM destination d, staff s
 					WHERE s.staffid = d.staffid
-					ORDER BY d.starttrip DESC;";
+					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
-				while($row = $result -> fetch_assoc()) {
-					echo "<br>Name: " .$row['staffname'];
-					echo "<br>Desination: " .$row['destinationname'];
-					echo "<br>Start trip: " .$row['starttrip']. " to " .$row['endtrip'];
-					echo "<br>Reason: " .$row['note']. "<hr>";
+				while($row2 = $result -> fetch_assoc()) {
+					require "../include/dateformat.inc.php";
+					echo "<br>Name: " .$row2['staffname'];
+					echo "<br>Category: " .$row2['category'];
+					echo "<br>Name of work: " .$row2['workname'];
+					echo "<br>Place been: " .$row2['placename'];
+					echo "<br>From: " .$newDate. " to " .$newDate2;
+					echo "<br>Time start: " .$newTime. " to " .$newTime2;
+					echo "<hr>";
 				}
 			}
 			?>

@@ -18,7 +18,7 @@
 
 #body {
     font-family: sans-serif;
-    background-color: rgb(125, 203, 255);
+    background-color: rgb(168, 218, 252);
 }
 
 h2 {
@@ -79,10 +79,12 @@ th {
     align-content: center;
     background-color: white;
     border-style: solid;
-    width: 300px;
+    max-width: 500px;
     padding-left: 20px;
     margin-left: 20px;
     box-shadow: 5px 10px #888888;
+    padding-right: 20px;
+    margin-bottom: 50px;
 }
 
 .peopleout {
@@ -93,6 +95,7 @@ th {
     background-color: white;
     margin-left: 20px;
     box-shadow: 5px 10px #888888;
+    margin-bottom: 50px;
 }
 
 .container {
@@ -174,7 +177,7 @@ h4 {
     text-decoration-line: underline;
 }
 
-#changedate {
+#DTformat {
     width: 150px;
 }
 

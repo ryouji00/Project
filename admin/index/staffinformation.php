@@ -1,19 +1,17 @@
 	<?php require_once "header.php";?>
-	<title>Sistem E-Gerak | Carian Pegawai</title>
+	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
 <style>
 </style>
 <body id="body">
 	<hr>
 	<h2>Welcome</h2>
-	<hr>
 	<!-- Search  -->
 	<section id="carian">
 		<form action="staffinformation.php" method="GET">
 			<label>Masukkan nama pegawai: </label>
 			<input id="myInput" name="search" type="text" onkeyup="myFunction()" required>
-			<!-- <button name="search-button" type="submit">Cari</button>
-			<button type="reset" value="Reset">Reset</button> -->
+			<!-- <button name="search-button" type="submit">Cari</button> -->
 	<!-- Table -->
 	<div>
 		<table class="table table-sm table-bordered table-hover">
@@ -22,7 +20,7 @@
 					<td>Bil.</td>
 					<td>Name</td>
 					<td>Unit</td>
-					<td>Action</td>
+					<!-- <td>Action</td> -->
 				</tr>
 			</thead>
 			<tbody id="tablefortoday" class="table-responsive-sm">
@@ -30,8 +28,8 @@
 					<?php
 					$i = 1;
 					$sql = "SELECT staffname, staffunit, staffid
-								FROM staff
-								ORDER BY staffname ASC;";
+							FROM staff
+							ORDER BY staffname ASC;";
 					$result = $conn -> query($sql);
 					$i = 1;
 					if($result -> num_rows > 0) {
@@ -69,7 +67,6 @@
 		</form>
 	</section>
 	<script>
-		/* staffinformation */
 		//for search filter
 		$(document).ready(function() {
 			$("#myInput").on("keyup", function() {

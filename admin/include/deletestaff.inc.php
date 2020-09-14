@@ -3,8 +3,9 @@
   $('#myInput').trigger('focus')
 })
 </script>
+	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Delete</button>
 	<section>
-		<form method="POST" action="deleteinformation.php">
+		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
@@ -16,7 +17,18 @@
 							</button>
 						</div>
 						<div class="modal-body">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam dolorem fugit, laudantium hic vitae nihil possimus eligendi minima! Accusantium quidem nisi tempore laborum debitis quos similique sunt eum magnam tenetur?</p>
+							<b><?php
+							$sql = "SELECT staffname, staffusername, staffid, staffemail, staffunit
+									FROM staff
+									WHERE staffid = 7";
+							$result = $conn -> query($sql);
+							while($row = $result -> fetch_assoc()) {
+								echo "Name: " .$row['staffname'];
+								echo "<br>Username: " .$row['staffusername'];
+								echo "<br>E-Mail: " .$row['staffemail'];
+								echo "<br>" .$row['staffunit'];
+							}
+							?></b>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -25,18 +37,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- <h3>Are you sure you want to delete?</h3>
-			<form action="staffinformation.php" method="post">
-				<a class="btn btn-secondary" href="staffinformationresult.php" role="button">Cancel</a>
-				<button id="confirmdelete" type="button" class="btn btn-danger">Delete</button>
-				<label>Enter staff name again to delete</label>
-				<input type="text" name="idstaff" required>
-				<button type="submit" name="deletebutton">Delete</button>
-				<button type="reset" value="Reset">Reset</button> -->
 		</form>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestiae aspernatur sint perferendis sed in culpa ullam nam tempora provident eveniet eligendi inventore esse animi facere, distinctio at labore reiciendis.</p>
 		<?php
-		$confirmstaff = $_SESSION['search'];
+		$confirmstaff = $_SESSION['staffid'];
 		if(isset($_POST['deletebutton'])) {
 			echo "Matching<br>";
 			$sql = "DELETE FROM staff

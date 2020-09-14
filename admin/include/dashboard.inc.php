@@ -5,9 +5,9 @@
 </script>
 <tr>
 	<td class="bil"><?php echo $i;?></td>
-	<td><?php echo $row["staffname"];?></td>
+	<td><button class="btn" data-toggle="modal" data-target="#exampleModal"><?php echo $row["staffname"];?></button></td>
 	<td><?php echo $row["staffunit"];?></td>
-	<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
+	<!-- <td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td> -->
 </tr>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -21,22 +21,21 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$staffarray = array($row['staffname']);
-				$implodeArray = implode("', '", $staffarray);
+				$_SESSION['staffid'] = $row['staffid'];
+				$id = $row['staffid'];
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
-						WHERE staffname LIKE ('$implodeArray')
-						ORDER BY starttrip ASC;";
+						WHERE staffid = 7
+						ORDER BY tripstart DESC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
-					while($row2 = $result -> fetch_assoc()) {
+					while($row2 = $result2 -> fetch_assoc()) {
+						include "dateformat.inc.php";
 						echo "Kategori: " .$row2["category"];
-						echo "Tugasan: " .$row2["workname"];
+						echo "<br>Tugasan: " .$row2["workname"];
 						echo "<br>Lokasi: " .$row2["placename"];
-						echo "<br>Tarikh mula:" .$row2["tripstart"];
-						echo "Tarikh akhir: " .$row2["tripend"];
-						echo "<br>Masa mula: " .$row2["starttime"];
-						echo "Masa akhir: " .$row2["timeend"];
+						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
+						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
 					}
 				}
 				else {
