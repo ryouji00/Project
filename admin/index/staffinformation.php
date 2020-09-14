@@ -11,8 +11,7 @@
 		<form action="staffinformation.php" method="GET">
 			<label>Masukkan nama pegawai: </label>
 			<input id="myInput" name="search" type="text" onkeyup="myFunction()" required>
-			<!-- <button name="search-button" type="submit">Cari</button>
-			<button type="reset" value="Reset">Reset</button> -->
+			<!-- <button name="search-button" type="submit">Cari</button> -->
 	<!-- Table -->
 	<div>
 		<table class="table table-sm table-bordered table-hover">
@@ -29,13 +28,15 @@
 					<?php
 					$i = 1;
 					$sql = "SELECT staffname, staffunit, staffid
-								FROM staff
-								ORDER BY staffname ASC;";
+							FROM staff
+							ORDER BY staffname ASC;";
 					$result = $conn -> query($sql);
 					$i = 1;
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_assoc()) {
+							$_SESSION['staffid'] = $row['staffid'];
 							require("../include/dashboard.inc.php");
+							$_SESSION['staffid'] = 1;
 							$i++;
 						}
 					}
@@ -68,7 +69,6 @@
 		</form>
 	</section>
 	<script>
-		/* staffinformation */
 		//for search filter
 		$(document).ready(function() {
 			$("#myInput").on("keyup", function() {

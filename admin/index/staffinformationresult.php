@@ -7,16 +7,17 @@
 		<section id="result">
 			<h3>Detail pegawai</h3>
 			<?php
-			$searchname = $_SESSION['search'];
+			$id = $_SESSION['staffid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
-					FROM staff
-					WHERE staffname = '$searchname';";
+					FROM staffid
+					WHERE staffid = '$id';";
 			$result = $conn -> query($sql);
-			$row = $result -> fetch_assoc();
-			echo "<br>Name: " .$row['staffname'];
-			echo "<br>Username: " .$row['staffusername'];
-			echo "<br>E-Mail: " .$row['staffemail'];
-			echo "<br>Unit: " .$row['staffunit'];
+			while($row = $result -> fetch_assoc()) {
+				echo "<br>Name: " .$row['staffname'];
+				echo "<br>Username: " .$row['staffusername'];
+				echo "<br>E-Mail: " .$row['staffemail'];
+				echo "<br>Unit: " .$row['staffunit'];
+			}
 			?>
 			<br>
 			<?php
@@ -24,7 +25,7 @@
 			?>
 			<!-- Retrieve data -->
 			<?php
-			$searchid = $_SESSION['search'];
+			$searchid = $_SESSION['staffid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
 					WHERE staffname = '$searchid';";
@@ -85,6 +86,10 @@
 				<hr>
 				<h4>Change trip information</h4>
 				<?php
+				$sql = "SELECT *
+						FROM destination
+						WHERE staffid = '$searchid';";
+				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result2 -> fetch_assoc()) {
 						include "../include/dateformat.inc.php";
@@ -102,13 +107,13 @@
 				}
 				?>
 				<br>
-				<!-- Confirming trip
+				<!-- Confirming trip -->
 				<div>
 					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				</div>
-				<br> -->
+				<br>
 				<!-- Change category -->
-				<!-- <div>
+				<div>
 					<lable>Change category: </lable>
 					<select name="newcategory">
 						<option value="Kategori">Kategori</option>
@@ -119,28 +124,28 @@
 					</select>
 					<button class="btn btn-secondary btn-sm" name="change-category">edit</button>
 				</div>
-				<br> -->
-				<!-- Change placename
+				<br>
+				<!-- Change placename -->
 				<div>
 					<input type="text" name="newdestname" placeholder="Enter new for place being held">
 					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
 				</div>
-				<br> -->
-				<!-- Change workname
+				<br>
+				<!-- Change workname -->
 				<div>
 					<input type="text" name="newworkname" placeholder="Enter new name for the work">
 					<button class="btn btn-secondary btn-sm" name="change-workname">edit</button>
 				</div>
-				<br> -->
-				<!-- Change date
+				<br>
+				<!-- Change date -->
 				<div>
 					<label>Change date: </label>
 					<input id="DTformat" type="date" name="newstart">
 					<input id="DTformat" type="date" name="newend">
 					<button class="btn btn-secondary btn-sm" name="change-date">edit</button>
 				</div>
-				<br> -->
-				<!-- Change time
+				<br>
+				<!-- Change time -->
 				<div>
 					<label>Change time: </label>
 					<input id="DTformat" type="time" name="newstarttime">
@@ -148,10 +153,10 @@
 					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
 				</div>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
-				<br> -->
-				<!-- Delete trip
 				<br>
-				button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button> -->
+				<!-- Delete trip -->
+				<br>
+				button class="btn btn-danger btn-sm" name="delete-trip">Delete trip</button>
 				<?php include "../include/deletetrip.inc.php";?> -->
 			<?php
 			$confirmdestid = $_GET['confirmdestid'];

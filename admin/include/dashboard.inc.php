@@ -21,16 +21,16 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$staffarray = array($row['staffname']);
-				$implodeArray = implode("','", $staffarray);
+				$id = $_SESSION['staffid'];
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
 						FROM destination
-						WHERE staffname = ('$implodeArray')
-						ORDER BY destinationId DESC;";
+						WHERE staffname = '$id'
+						ORDER BY tripstart DESC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
 					include "dateformat.inc.php";
 					while($row = $result2 -> fetch_assoc()) {
+						include "dateformat.inc.php";
 						echo "Kategori: " .$row["category"];
 						echo "Tugasan: " .$row["workname"];
 						echo "<br>Lokasi: " .$row["placename"];
