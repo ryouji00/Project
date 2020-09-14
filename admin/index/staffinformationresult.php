@@ -37,6 +37,7 @@
 					WHERE staffid = 7";
 			$result2 = $conn -> query($sql2);
 			?>
+			<hr>
 			<form method="get" action="staffinformationresult.php">
 				<h4>Change staff information</h4>
 				<!-- <?php 
@@ -89,7 +90,7 @@
 				<?php
 				$sql = "SELECT *
 						FROM destination
-						WHERE staffid = 7;";
+						WHERE staffid = 2;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {
@@ -100,11 +101,12 @@
 						echo "<br>Place held: " .$row2['placename'];
 						echo "<br>From: " .$newDate. " to " .$newDate2;
 						echo "<br>Time start: " .$newTime. " to " .$newTime2;
+						echo "<br>";
 						require "../include/edit.inc.php";
 					}
 				}
 				else {
-					echo "No  record";
+					echo "<h3>Tiada rekod</h3>";
 				}
 				?>
 				<br>

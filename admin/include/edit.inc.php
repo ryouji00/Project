@@ -1,5 +1,6 @@
 				<!-- Confirming trip -->
 				<div>
+					<br>
 					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
 				</div>
 				<br>
