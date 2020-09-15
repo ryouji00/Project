@@ -5,9 +5,9 @@
 </script>
 <tr>
 	<td class="bil"><?php echo $i;?></td>
-	<td><button class="btn" data-toggle="modal" data-target="#exampleModal"><?php echo $row["staffname"];?></button></td>
+	<td><?php echo $row["staffname"];?></td>
 	<td><?php echo $row["staffunit"];?></td>
-	<!-- <td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td> -->
+	<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
 </tr>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -21,12 +21,12 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$_SESSION['staffid'] = $row['staffid'];
-				$id = $row['staffid'];
-				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend
+				$id = $_SESSION['staffid'];
+				$newarray = implode("','", $id);
+				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 						FROM destination
-						WHERE staffid = 7
-						ORDER BY tripstart DESC;";
+						WHERE staffid = '$newarray'
+						ORDER BY tripstart ASC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
 					while($row2 = $result2 -> fetch_assoc()) {

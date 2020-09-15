@@ -20,7 +20,7 @@
 					<td>Bil.</td>
 					<td>Name</td>
 					<td>Unit</td>
-					<!-- <td>Action</td> -->
+					<td>Action</td>
 				</tr>
 			</thead>
 			<tbody id="tablefortoday" class="table-responsive-sm">
@@ -34,6 +34,8 @@
 					$i = 1;
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_assoc()) {
+							$staffarray = array($row['staffid']);
+							$_SESSION['staffid'] = $staffarray;
 							require("../include/dashboard.inc.php");
 							$i++;
 						}

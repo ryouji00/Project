@@ -1,9 +1,9 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'sistem pergerakan pegawai';
 
+$servername = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "sistem pergerakan pegawai";
 $conn = mysqli_connect($servername,$dBUsername,$dBPassword,$dBName);
 
 if (!$conn) {
