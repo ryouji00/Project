@@ -43,20 +43,20 @@
 				<!-- Change Staff Unit -->
 				<lable>Change Unit: </lable>
 				<select name="newunit">
-					<option value="0">Unit Rangkaian</option>
-					<option value="1">Unit Sokongan Teknikal</option>
-					<option value="2">Unit Operasi dan Pusat</option>
-					<option value="3">Unit Keselamatan</option>
-					<option value="4">Unit Pemindanan Tex</option>
-					<option value="5">Unit Pengaturcaraan</option>
-					<option value="6">Unit Farmasi Pengurusan dan Kejuruteraan</option>
-					<option value="7">Unit Aplikasi Kesihatan</option>
-					<option value="8">Unit Perubatan</option>
-					<option value="9">Unit Aplikasi HIS</option>
-					<option value="10">Unit Dasar dan Penilaian Projek</option>
-					<option value="12">Unit Perolehan SQA</option>
-					<option value="13">Unit Pengurusan, Pentadbiran, Kewangan</option>
-					<option value="14">Unit Perancangan dan Inovasi ICT</option>
+					<option value="Unit Rangkaian">Unit Rangkaian</option>
+					<option value="Unit Sokongan Teknika">Unit Sokongan Teknikal</option>
+					<option value="Unit Operasi dan Pusat">Unit Operasi dan Pusat</option>
+					<option value="Unit Keselamatan">Unit Keselamatan</option>
+					<option value="Unit Pemindanan Tex">Unit Pemindanan Tex</option>
+					<option value="Unit Pengaturcaraan">Unit Pengaturcaraan</option>
+					<option value="Unit Farmasi Pengurusan dan Kejuruteraan">Unit Farmasi Pengurusan dan Kejuruteraan</option>
+					<option value="Unit Aplikasi Kesihatan">Unit Aplikasi Kesihatan</option>
+					<option value="Unit Perubatan">Unit Perubatan</option>
+					<option value="Unit Aplikasi HIS">Unit Aplikasi HIS</option>
+					<option value="Unit Dasar dan Penilaian Projek">Unit Dasar dan Penilaian Projek</option>
+					<option value="Unit Perolehan SQA">Unit Perolehan SQA</option>
+					<option value="Unit Pengurusan, Pentadbiran, Kewangan">Unit Pengurusan, Pentadbiran, Kewangan</option>
+					<option value="Unit Perancangan dan Inovasi ICT">Unit Perancangan dan Inovasi ICT</option>
 				</select>
 				<button name="change-unit">edit</button>
 				<hr>
