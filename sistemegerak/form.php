@@ -10,28 +10,13 @@
   <link rel="stylesheet" type="text/css" href="css/whole.css">
 
  	<div class="form-main">
-		<section id="welcomedetail">
- 			<?php
-			 //aku tak tau camne kau pass value session ni
-			$name = $_SESSION['idstaff'];
-			$sql = "SELECT *
-					FROM staff
-					WHERE staffid = '$name';";
-			$result = $conn -> query($sql);
-			$row = $result -> fetch_assoc();
-			echo $row['staffname'];
-			echo $row['staffunit'];
-			?>
-		</section>
  		<section class="section-default">
-			<h1>Form</h1>
-			<form action="includes/logout.inc.php" method="post">
-				<select id="tempat" name="place-go">
-					<option value="0">Kategori</option>
-					<option value="1">Mesyuarat</option>
-					<option value="2">Kursus</option>
-					<option value="3">Bengkel</option>
-					<option value="4">Lawatan Tapak</option>
+			<form action="includes/form.inc.php" method="post">
+				<select name="place-go">
+					<option value="Mesyuarat">Mesyuarat</option>
+					<option value="Kursus">Kursus</option>
+					<option value="Bengkel">Bengkel</option>
+					<option value="Lawatan">Lawatan Tapak</option>
 				</select>
 
 				<input type="text" name="work" placeholder="Nama Tugasan">

@@ -8,11 +8,11 @@ if (isset($_POST['signup-submit'])) {
 	$password = $_POST['pwd'];
 	$passwordRepeat = $_POST['pwd-repeat'];
 	$name = $_POST['nama'];
-	$staffposition = $_POST['position'];
-	$staffunit = $_POST['unit'];
+	$staffjawatan = $_POST['position'];
+	$staffbahagian = $_POST['unit'];
 	
 
-	if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat) || empty($name) || empty($staffposition) || empty($staffunit)) {
+	if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat) || empty($name) || empty($staffjawatan) || empty($staffbahagian)) {
 		header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
 		exit();
 	
@@ -59,7 +59,7 @@ if (isset($_POST['signup-submit'])) {
 		         }
 		         else{
 		         	$hashedPwd = password_hash($password,PASSWORD_DEFAULT);
-		         	mysqli_stmt_bind_param($stmt, "ssss",$username,$email,$hashedPwd,$name,$staffposition,$staffunit);
+		         	mysqli_stmt_bind_param($stmt, "ssssss",$username,$email,$hashedPwd,$name,$staffjawatan,$staffbahagian);
 			        mysqli_stmt_execute($stmt);
 			        header("Location: ../signup.php?signup=success");
 			        exit();

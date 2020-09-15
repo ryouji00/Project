@@ -41,29 +41,26 @@
  	?>
  	<form action="includes/signup.inc.php" method="post"> 
     <input type="text" name="nama" placeholder="Name">
-    <select id="jawatan" name="position" placeholder="Jawatan">
-	<option value="0">Jawatan</option>
-   <option value="1">Admin</option>
-   <option value="2">Staff</option>
+    <select name="position">>
+   <option value="Admin">Admin</option>
+   <option value="Staff">Staff</option>
     </select>
-   <select id="Bahagian" name="unit" placeholder="Unit">
-   <option value="0">Bahagian</option>
-   <option value="1">Pejabat CIO</option>
-   <option value="2">Unit Perolehan Dan SQA</option>
-   <option value="3">Unit Dasar Dan Penilaian Projek</option>
-   <option value="4">Unit Pengurusan Pentadbiran Kewangan</option>
-   <option value="5">Unit Perancangan Dan Inovasi ICT </option>
-   <option value="6">Unit Aplikasi HIS</option>
-   <option value="7">Unit Aplikasi Perubatan</option>
-   <option value="8">Unit Aplikasi Kesihatan</option>
-   <option value="9">Unit Aplikasi Farmasi Pengurusan Dan Kejuruteraan</option>
-   <option value="10">Unit Pengaturcaraan</option>
-   <option value="11">Unit Operasi Dan Pusat</option>
-   <option value="12">Unit Keselamatan</option>
-   <option value="13">Unit Sokongan Teknikal</option>
-   <option value="14">Unit Rangkaian</option>
-   <option value="15">Unit Pemindahan TEK</option>
-   </select>
+    <select name="unit">
+				<option value="Unit Rangkaian">Unit Rangkaian</option>
+				<option value="Unit Sokongan Teknikal">Unit Sokongan Teknikal</option>
+				<option value="Unit Operasi dan Pusat">Unit Operasi dan Pusat</option>
+				<option value="Unit Keselamatan">Unit Keselamatan</option>
+				<option value="Unit Pemindahan Tex">Unit Pemindanan Tex</option>
+				<option value="Unit Pengaturcaraan">Unit Pengaturcaraan</option>
+				<option value="Unit Farmasi Pengurusan dan Kejuruteraan">Unit Farmasi Pengurusan dan Kejuruteraan</option>
+				<option value="Unit Aplikasi Kesihatan">Unit Aplikasi Kesihatan</option>
+				<option value="Unit Perubatan">Unit Perubatan</option>
+				<option value="Unit Aplikasi HIS">Unit Aplikasi HIS</option>
+				<option value="Unit Dasar dan Penilaian Projek">Unit Dasar dan Penilaian Projek</option>
+				<option value="Unit Perolehan SQA">Unit Perolehan SQA</option>
+				<option value="Unit Pengurusan, Pentadbiran, Kewangan">Unit Pengurusan, Pentadbiran, Kewangan</option>
+				<option value="Unit Perancangan dan Inovasi ICT">Unit Perancangan dan Inovasi ICT</option>
+	</select>
  	<input type="text" name="uid" placeholder="Username">
  	<input type="text" name="mail" placeholder="E-mail">
  	<input type="password" name="pwd" placeholder="Password">
@@ -79,6 +76,7 @@
 </section>
 </div>
  </main>
+  
 
 
  <?php
