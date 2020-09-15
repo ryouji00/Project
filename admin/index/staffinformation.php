@@ -10,7 +10,7 @@
 	<section id="carian">
 		<form action="staffinformation.php" method="GET">
 			<label>Masukkan nama pegawai: </label>
-			<input id="myInput" name="search" type="text" onkeyup="myFunction()" required>
+			<input id="myInput" name="search" type="text" onkeyup="myFunction()">
 			<!-- <button name="search-button" type="submit">Cari</button> -->
 	<!-- Table -->
 	<div>
