@@ -90,7 +90,7 @@
 				<?php
 				$sql = "SELECT *
 						FROM destination
-						WHERE staffid = 2;";
+						WHERE staffid = 3;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {
