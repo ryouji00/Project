@@ -67,7 +67,7 @@
   <button type="submit" name="signup-submit">Signup</button>
 
 
-  <a href="login.php">Login</a>
+  <a class="btn btn-outline-secondary" href="login.php">Login</a>
 
 
  </form>
