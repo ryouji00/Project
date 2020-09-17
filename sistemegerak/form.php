@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" href="css/whole.css">
 
  	<div class="form-main">
-<<<<<<< HEAD
  		<section class="section-default">
 			<form action="includes/form.inc.php" method="post">
 				<select name="place-go">
@@ -18,18 +17,6 @@
 					<option value="Kursus">Kursus</option>
 					<option value="Bengkel">Bengkel</option>
 					<option value="Lawatan">Lawatan Tapak</option>
-=======
-		
- 		<section class="section-default">
-			<h1>Form</h1>
-			<form action="includes/form.inc.php" method="post">
-				<select id="tempat" name="place-go">
-					<option value="0">Kategori</option>
-					<option value="1">Mesyuarat</option>
-					<option value="2">Kursus</option>
-					<option value="3">Bengkel</option>
-					<option value="4">Lawatan Tapak</option>
->>>>>>> 458402337640977cce4f6329d8ed9bb42968c207
 				</select>
 
 				<input type="text" name="work" placeholder="Nama Tugasan">
