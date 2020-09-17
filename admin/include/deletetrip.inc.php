@@ -46,7 +46,7 @@
         $searchid = $_SESSION['search'];
 		if(isset($_POST['deletebutton'])) {
 			$sql = "DELETE FROM destination
-					WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+					WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 			if ($conn->query($sql) === TRUE)								
 			{
 				echo "<hr>Record updated successfully";

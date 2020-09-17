@@ -1,4 +1,6 @@
 <?php
-session_destroy();
-echo "<script location.href='http://localhost/Project/sistemegerak/'></script>";
+session_start();
+unset($_SESSION['usernamestaff']);
+unset($_SESSION['idstaff']);
+header("location:http://localhost/Project/sistemegerak/login.php");
 ?>

@@ -25,8 +25,7 @@ h2 {
     text-decoration: underline solid;
 }
 
-.footer {
-    position: absolute;
+.card {
     left: 0;
     bottom: 0;
     width: 100%;
@@ -36,10 +35,11 @@ h2 {
     overflow: hidden;
 }
 
+#logoutbtn,
+#adminbtn {
+    margin-top: 10px;
+}
 
-/* Form */
-
-#welcomedetail {
-    background-color: white;
-    /* nanti kene auto flex */
+select {
+    margin: 10px;
 }
