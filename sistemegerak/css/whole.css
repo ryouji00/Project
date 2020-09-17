@@ -25,8 +25,7 @@ h2 {
     text-decoration: underline solid;
 }
 
-.footer {
-    position: absolute;
+.card {
     left: 0;
     bottom: 0;
     width: 100%;
