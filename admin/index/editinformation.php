@@ -14,7 +14,7 @@
 					WHERE staffid = '$searchid';";
 			$result = $conn -> query($sql);
 			$row = $result -> fetch_assoc();
-			$sql2 = "SELECT destinationname, destinationId, starttrip, endtrip
+			$sql2 = "SELECT destinationname, destinationid, starttrip, endtrip
 					FROM destination
 					WHERE staffid = '$searchid'";
 			$result2 = $conn -> query($sql2);
@@ -64,7 +64,7 @@
 				<?php
 				while ($row2 = $result2 -> fetch_assoc()) {
 					include "dateformat.inc.php";
-					echo "<br>Trip ID: " .$row2['destinatioId'];
+					echo "<br>Trip ID: " .$row2['destinationid'];
 					echo "<br>Category: " .$row2['category'];
 					echo "<br>Work name: " .$row2['workname'];
 					echo "<br>Place held: " .$row2['placename'];
@@ -151,7 +151,7 @@
 				$newcat = $_GET['newcategory'];
 				$sql = "UPDATE destination
 						SET category = '$newcat'
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
@@ -163,7 +163,7 @@
 				$newdestname = $_GET['newdestname'];
 				$sql = "UPDATE destination
 						SET placename = '$newdestname'
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
@@ -175,7 +175,7 @@
 				$newworkname = $_GET['newworkname'];
 				$sql = "UPDATE destination
 						SET workname = '$newworkname'
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
@@ -188,7 +188,7 @@
 				$newend = $_GET['newend'];
 				$sql = "UPDATE destination
 						SET tripstart = '$newstart', tripend = '$newend'
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
@@ -201,7 +201,7 @@
 				$newendtime = $_GET['newendtime'];
 				$sql = "UPDATE destination
 						SET timestart = '$newstarttime', timeend = '$newendtime'
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
@@ -211,7 +211,7 @@
 			}
 			elseif(isset($_GET['delete-trip'])) {
 				$sql = "DELETE FROM destination
-						WHERE staffid = '$searchid' AND destinationId = '$confirmdestid';";
+						WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";
 				if ($conn->query($sql) === TRUE) {
 					echo "<hr>Record updated successfully";
 				}
