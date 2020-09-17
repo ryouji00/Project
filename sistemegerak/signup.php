@@ -32,7 +32,6 @@
         elseif ($_GET["error"] == "usertaken") {
         	echo '<p class="signuperror">Username is already taken!</p>';
         }
-      
     } 
       elseif ($_GET["signup"] == "success") {
       	echo '<p class="signupSuccess">Signup successful!</p>';

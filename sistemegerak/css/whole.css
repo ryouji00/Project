@@ -40,6 +40,11 @@ h2 {
     margin-top: 10px;
 }
 
+#forgotbtn,
+#signupbtn {
+    margin: 20px;
+}
+
 select {
     margin: 10px;
 }

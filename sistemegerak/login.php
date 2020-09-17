@@ -18,40 +18,25 @@ require "header.php";
 		<h1>Login</h1>
 		<?php
 		if (isset($_SESSION['staffid'])) {
- 				echo '<form action="includes/logout.inc.php" method="post">
-		              <button type="submit" name="logout-submit">Logout</button>
-	                  </form>';
-                }
- 				else{
- 					echo '<form action="includes/login.inc.php" method="post">
-		                  <input type="text" name="mailuid" placeholder="Username/E-mail...">
-		                  <input type="password" name="pwd" placeholder="Password...">
-		                  <button type="submit" name="login-submit">Login</button>
-						  </form>
-
-						  <a href="signup.php" class="header-signup">Signup</a>';
-						  
-						  
-
-	                      
-                      
-
-					}
-	                
-	    
-		 ?>
-		 
-    <?php
-   if(isset($_GET["newpwd"])){
-    if($_GET["newpwd"] == "passwordupdated"){
-      echo '<p class="signupsuccess">Your password has been reset!</p>';
-    }   
-  }
-
-  ?>
-
-  <a href="reset-password.php" style="float: right">Forgot your password</a>
-	 
+ 			echo '<form action="includes/logout.inc.php" method="post">
+		          <button type="submit" name="logout-submit">Logout</button>
+	              </form>';
+        }
+ 		else{
+ 			echo '<form action="includes/login.inc.php" method="post">
+		          <input type="text" name="mailuid" placeholder="Username/E-mail...">
+		          <input type="password" name="pwd" placeholder="Password...">
+		          <button type="submit" name="login-submit">Login</button>
+				  </form>
+				  <a id="signupbtn" class="btn btn-outline-secondary" href="signup.php" class="header-signup">Signup</a>';
+		}
+		if(isset($_GET["newpwd"])){
+			if($_GET["newpwd"] == "passwordupdated"){
+    			echo '<p class="signupsuccess">Your password has been reset!</p>';
+			}   
+		}
+		?>
+		<a id="forgotbtn" class="btn btn-outline-secondary" href="reset-password.php" style="float: right">Forgot your password</a>
 	</div>
 </body>
 </html>
