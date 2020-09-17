@@ -5,7 +5,7 @@
 </style>
 <body id="body">
 	<hr>
-	<h2>Welcome</h2>
+	<h2>Welcome <?php echo $_SESSION['usernamestaff']?></h2>
 	<!-- Search  -->
 	<section id="carian">
 		<form action="staffinformation.php" method="GET">
