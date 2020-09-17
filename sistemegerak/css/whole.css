@@ -35,3 +35,12 @@ h2 {
     text-align: center;
     overflow: hidden;
 }
+
+#logoutbtn,
+#adminbtn {
+    margin-top: 10px;
+}
+
+select {
+    margin: 10px;
+}
