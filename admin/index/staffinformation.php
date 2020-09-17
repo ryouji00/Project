@@ -1,4 +1,8 @@
-	<?php require_once "header.php";?>
+<?php
+session_start();
+if($_SESSION['usernamestaff']) {
+?>
+	<?php require "header.php";?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
 <style>
@@ -84,3 +88,9 @@
 		})
 	</script>
 	<?php require "footer.php";?>
+<?php
+}
+else {
+    header("location:../sistemegerak/login.php");
+}
+?>
