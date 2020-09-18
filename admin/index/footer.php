@@ -1,5 +1,5 @@
 <main>
-	<div class="card">
+	<div class="card" style="background-color: #1e88e5; color: black; height: 60px;">
 		<div class="card-body">
 			<p>Hak Cipta Terpelihara KKM@2020</p>
 		</div>
