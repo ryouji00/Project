@@ -7,10 +7,10 @@
 		<section id="result">
 			<h3>Detail pegawai</h3>
 			<?php
-			$id = $_SESSION['staffid'];
+			$id = $_SESSION['idstaff'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
 					FROM staff
-					WHERE staffid = 7;";
+					WHERE staffid = $id;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
 				while($row = $result -> fetch_assoc()) {
@@ -26,7 +26,7 @@
 			<br>
 			<!-- Retrieve data -->
 			<?php
-			$searchid = $_SESSION['staffid'];
+			$searchid = $_SESSION['idstaff'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
 					WHERE staffid = '$searchid';";
@@ -40,12 +40,6 @@
 			<hr>
 			<form method="get" action="staffinformationresult.php">
 				<h4>Change staff information</h4>
-				<!-- <?php 
-				echo "Name: " .$row['staffname'];
-				echo "<br>Username: " .$row['staffusername'];
-				echo "<br>E-Mail: " .$row['staffemail'];
-				echo "<br>" .$row['staffunit'];
-				?> -->
 				<br>
 				<!-- Change Staff Name -->
 				<div>

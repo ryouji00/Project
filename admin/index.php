@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['usernamestaff']) {
+if($_SESSION['idstaff']) {
     header("location:index/staffinformation.php");
 }
 else {

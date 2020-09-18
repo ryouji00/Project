@@ -50,3 +50,6 @@
 		</div>
 	</div>
 </div>
+<script>
+//for row viewing
+</script>
