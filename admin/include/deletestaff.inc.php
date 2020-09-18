@@ -56,5 +56,3 @@
 		}
 		?>
 	</section>
-	<!-- Akhir -->
-	<?php include "footer.php";?>

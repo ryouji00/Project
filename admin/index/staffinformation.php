@@ -39,8 +39,8 @@ if($_SESSION['usernamestaff']) {
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_assoc()) {
 							$currentid = $row['staffid'];
-							$staffarray = array($row['staffid']);
-							$_SESSION['staffid'] = $staffarray;
+							//$staffarray = array($row['staffid']);
+							//$_SESSION['staffid'] = $staffarray;
 							require("../include/dashboard.inc.php");
 							$i++;
 						}

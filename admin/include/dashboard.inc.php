@@ -21,12 +21,13 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$id = $_SESSION['staffid'];
-				$newarray = implode("','", $id);
+				$id = $_SESSION['idstaff'];
+				//$newarray = implode("','", $id);
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 						FROM destination
-						WHERE staffid = '$newarray'
-						ORDER BY tripstart ASC;";
+						WHERE staffid = $currentid
+						ORDER BY tripstart ASC
+						LIMIT 1;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
 					while($row2 = $result2 -> fetch_assoc()) {
