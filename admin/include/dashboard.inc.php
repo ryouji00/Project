@@ -21,22 +21,21 @@
     		</div>
     		<div class="modal-body">
 				<?php
-				$id = $_SESSION['idstaff'];
-				//$newarray = implode("','", $id);
+				$currentid = $_SESSION['currentid'];
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 						FROM destination
-						WHERE staffid = $currentid
-						ORDER BY tripstart ASC
-						LIMIT 1;";
+						WHERE staffid = $id
+						ORDER BY tripstart ASC;";
 				$result2 = $conn -> query($sql2);
 				if($result2 -> num_rows > 0) {
 					while($row2 = $result2 -> fetch_assoc()) {
-						include "dateformat.inc.php";
-						echo "Kategori: " .$row2["category"];
-						echo "<br>Tugasan: " .$row2["workname"];
-						echo "<br>Lokasi: " .$row2["placename"];
-						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
-						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+							include "dateformat.inc.php";
+							echo "Kategori: " .$row2["category"];
+							echo "<br>Tugasan: " .$row2["workname"];
+							echo "<br>Lokasi: " .$row2["placename"];
+							echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
+							echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
+							echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
 					}
 				}
 				else {
@@ -46,7 +45,7 @@
     		</div>
     		<div class="modal-footer">
     			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    			<a name="edit-button" href="staffinformationresult.php" type="button" class="btn btn-primary">Edit</a>
+    			<a name="edit-button" href="../index/staffinformationresult.php" type="button" class="btn btn-primary">Edit</a>
     		</div>
 		</div>
 	</div>

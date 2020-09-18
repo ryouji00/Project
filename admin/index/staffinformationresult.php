@@ -29,12 +29,12 @@
 			$searchid = $_SESSION['staffid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
-					WHERE staffid = 7;";
+					WHERE staffid = '$searchid';";
 			$result = $conn -> query($sql);
 			$row = $result -> fetch_assoc();
 			$sql2 = "SELECT category, workname, tripstart, tripend
 					FROM destination
-					WHERE staffid = 7";
+					WHERE staffid = '$searchid'";
 			$result2 = $conn -> query($sql2);
 			?>
 			<hr>
