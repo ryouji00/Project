@@ -11,7 +11,7 @@ if(isset($_POST['send-submit'])){
 	$timestart = $_POST['time-start'];
 	$timeend = $_POST['time-end'];
 	$pegawai = $_POST['officer'];
-	$staffid = $_SESSION['staffid'];
+	$staffid = $_SESSION['idstaff'];
 
 	if(empty($category) || empty($worknama) || empty($placename) || empty($tripstart) || empty($tripend) || empty($timestart) || empty($timeend) || empty($pegawai)) {
 		header("Location: ../form.php?error=emptyfields&place-go=".$category. "&place-go=" .$worknama);
