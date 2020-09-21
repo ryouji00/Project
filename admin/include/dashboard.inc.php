@@ -27,8 +27,8 @@
 						WHERE staffid = $id
 						ORDER BY tripstart ASC;";
 				$result2 = $conn -> query($sql2);
-				if($result2 -> num_rows > 0) {
-					while($row2 = $result2 -> fetch_assoc()) {
+				if(mysqli_num_rows($result2) > 0) {
+					while($row2 = mysqli_fetch_assoc($result2)) {
 							include "dateformat.inc.php";
 							echo "Kategori: " .$row2["category"];
 							echo "<br>Tugasan: " .$row2["workname"];
