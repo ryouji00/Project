@@ -29,7 +29,7 @@ if(isset($_POST['login-submit'])){
 				}
 				elseif ($pwdCheck == true) {
 					session_start();
-					$_SESSION['idstaff'] = $row['staffid'];
+					$_SESSION['staffid'] = $row['staffid'];
 					$_SESSION['usernamestaff'] = $row['staffusername'];
                     
 					header("Location: ../form.php?form=success");
