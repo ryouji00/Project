@@ -21,7 +21,7 @@ if(isset($_POST['send-submit'])){
 		$sql = "SELECT destinationid FROM destination WHERE destinationid=?";
 		$stmt = mysqli_stmt_init($conn);
 		if(!mysqli_stmt_prepare($stmt,$sql)){
-			header("Location: ../form.php?error=sqlerror");
+			header("Location: ../form.php?error=sqlerror1");
 			exit();
 		}
 		else{
@@ -34,10 +34,10 @@ if(isset($_POST['send-submit'])){
 				exit();
 			}
 			else{
-				$sql = "INSERT INTO destination ('category','workname,placename,tripstart,tripend,timestart,timeend,replaceofficer,staffid) VALUE (?,?,?,?,?,?,?,?,?,?)";
+				$sql = "INSERT INTO 'destination' ('category','workname','placename','tripstart','tripend','timestart','timeend','replaceofficer','staffid') VALUE (?,?,?,?,?,?,?,?,?,?)";
 				$stmt = mysqli_stmt_init($conn);
 				if(!mysqli_stmt_prepare($stmt,$sql)){
-					header("Location: ../form.php?error=sqlerror");
+					header("Location: ../form.php?error=sqlerror2");
 					exit();
 				}
 				else{
