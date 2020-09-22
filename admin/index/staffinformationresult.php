@@ -7,7 +7,7 @@
 		<section id="result">
 			<h3>Detail pegawai</h3>
 			<?php
-			$id = $_SESSION['idstaff'];
+			$id = $_SESSION['currentid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
 					FROM staff
 					WHERE staffid = $id;";
@@ -26,7 +26,7 @@
 			<br>
 			<!-- Retrieve data -->
 			<?php
-			$searchid = $_SESSION['idstaff'];
+			$searchid = $_SESSION['currentid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
 					WHERE staffid = '$searchid';";
