@@ -1,8 +1,3 @@
-<script>
-	$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script>
 <tr>
 	<td class="bil"><?php echo $i;?></td>
 	<td><?php echo $row["staffname"];?></td>
