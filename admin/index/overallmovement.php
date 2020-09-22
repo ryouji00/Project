@@ -14,20 +14,6 @@
 					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
 			while($row = $result -> fetch_assoc()) {
-				/*to count total trip for each person
-				$sql2 = "SELECT s.staffid
-						FROM destination d, staff s
-						WHERE s.staffid = d.staffid;";
-				$result2 = $conn -> query($sql2);
-				$row2 = $result2 -> fetch_assoc();
-				$id = $row2['staffid'];
-				$i = 0;
-				$queryResult = $result2 -> num_rows;
-				while($id === $row['staffid'])
-				{
-					$i++;
-				}
-				echo "Total trip: " .$i;*/
 				echo "<br>Name: " .$row['staffname']. "<br> " .$row['staffunit']. "<hr>";
 			}
 			?>
@@ -55,5 +41,4 @@
 			?>
 		</section>
 	</section>
-	<!-- Akhir -->
 	<?php include "footer.php";?>
