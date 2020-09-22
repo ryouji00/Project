@@ -5,8 +5,11 @@ if($_SESSION['usernamestaff']) {
 	<?php require "header.php";?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
-<style>
-</style>
+<script>
+	$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
 <body id="body">
 	<hr>
 	<h2>Welcome <?php echo $_SESSION['usernamestaff']?></h2>
