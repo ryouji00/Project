@@ -38,7 +38,7 @@
 						</svg>
 					Logout</a>
 					<?php
-					$idstaff = $_SESSION['staffid'];
+					$idstaff = $_SESSION['idstaff'];
 					$sql = "SELECT staffposition
 							FROM staff
 							WHERE staffid = '$idstaff';";
