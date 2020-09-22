@@ -3,15 +3,15 @@
   $('#myInput').trigger('focus')
 })
 </script>
-	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Delete</button>
+	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Padam data pegawai</button>
 	<section>
 		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal fade" id="exampleModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3 class="modal-title" id="exampleModalLongTitle">Are you sure you want to delete?</h3>
+							<h3 class="modal-title" id="exampleModalLongTitle">Adakah anda pasti untuk memadam data pegawai tersebut?</h3>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -31,8 +31,8 @@
 							?></b>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button name="deletebutton" type="button" class="btn btn-danger">Delete</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+							<button name="deletebutton" type="button" class="btn btn-danger">Padam</button>
 						</div>
 					</div>
 				</div>
