@@ -26,15 +26,14 @@
 			<br>
 			<!-- Retrieve data -->
 			<?php
-			$searchid = $_SESSION['currentid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
-					WHERE staffid = '$searchid';";
+					WHERE staffid = '$currentid';";
 			$result = $conn -> query($sql);
 			$row = $result -> fetch_assoc();
 			$sql2 = "SELECT category, workname, tripstart, tripend
 					FROM destination
-					WHERE staffid = '$searchid'";
+					WHERE staffid = '$currentid'";
 			$result2 = $conn -> query($sql2);
 			?>
 			<hr>
@@ -84,7 +83,7 @@
 				<?php
 				$sql = "SELECT *
 						FROM destination
-						WHERE staffid = 3;";
+						WHERE staffid = $currentid;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {

@@ -41,6 +41,7 @@ if($_SESSION['usernamestaff']) {
 					$i = 1;
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_assoc()) {
+							session_start();
 							$_SESSION['currentid'] = $row['staffid'];
 							$id = $row['staffid'];
 							//require("../include/dashboard.inc.php"); ?>
