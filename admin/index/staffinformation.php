@@ -40,7 +40,7 @@ if($_SESSION['usernamestaff']) {
 					$result = $conn -> query($sql);
 					$i = 1;
 					if($result -> num_rows > 0) {
-						while($row = $result -> fetch_assoc()) {
+						while($row = $result -> fetch_array()) {
 							$_SESSION['currentid'] = $row['staffid'];
 							$id = $row['staffid'];
 					?>
@@ -78,7 +78,7 @@ if($_SESSION['usernamestaff']) {
 						ORDER BY tripstart ASC;";
 				$result2 = $conn -> query($sql2);
 				if(mysqli_num_rows($result2) > 0) {
-					while($row2 = mysqli_fetch_assoc($result2)) {
+					while($row2 = mysqli_fetch_array($result2)) {
 						include "../include/dateformat.inc.php";
 						echo "Kategori: " .$row2["category"];
 						echo "<br>Tugasan: " .$row2["workname"];
