@@ -19,6 +19,8 @@ if(isset($_POST['currentid'])) {
 			echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
 			echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
 			echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+			echo "<br>";
+			echo "<hr>";
 		}
 	}
 	else {
@@ -28,9 +30,6 @@ if(isset($_POST['currentid'])) {
 }
 require "header.php";
 if($_SESSION['idstaff']) {
-
-
-
 ?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
@@ -88,20 +87,6 @@ if($_SESSION['idstaff']) {
 			</tbody>
 		</table>
 	</div>
-	<!-- Check whether the var has input -->
-	<?php
-	$currentid = $_SESSION['currentid'];
-	$sql = "SELECT staffname
-			FROM staff
-			WHERE staffid = $currentid;";
-	$result = $conn -> query($sql);
-	while($row = $result -> fetch_assoc()) {
-		?>
-		<p><b>current id:</b> <?php echo $_SESSION['currentid']?></p>
-		<p><b>current name:</b> <?php echo $row['staffname'];?></p>
-		<?php
-	}
-	?>
 	<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -112,31 +97,7 @@ if($_SESSION['idstaff']) {
         			<span aria-hidden="true">&times;</span>
     			</button>
     		</div>
-    		<div class="modal-body">
-				<?php
-				/* $currentid = $_SESSION['currentid'];
-				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
-						FROM destination
-						WHERE staffid = $currentid
-						ORDER BY tripstart ASC
-						LIMIT 2;";
-				$result2 = $conn -> query($sql2);
-				if(mysqli_num_rows($result2) > 0) {
-					while($row2 = mysqli_fetch_array($result2)) {
-						include "../include/dateformat.inc.php";
-						echo "Kategori: " .$row2["category"];
-						echo "<br>Tugasan: " .$row2["workname"];
-						echo "<br>Lokasi: " .$row2["placename"];
-						echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
-						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
-						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
-					}
-				}
-				else {
-					echo "Tiada rekod";
-				} */
-				?>
-    		</div>
+    		<div class="modal-body"></div>
     		<div class="modal-footer">
     			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     			<a name="edit-button" href="../index/staffinformationresult.php" type="button" class="btn btn-primary">Edit</a>
@@ -146,24 +107,24 @@ if($_SESSION['idstaff']) {
 </div>
 		<!-- Result -->
 		<?php
-		if(isset($_GET['search-button'])) {	
-			$searchname = mysqli_real_escape_string($conn, $_GET['search']);
-			$_SESSION['search'] = $searchname; //PASS THE VARIABLE TO staffinformationresult.php
-			echo "<h3>Hasil Carian</h3>";
-			$sql = "SELECT staffname
-					FROM staff
-					WHERE staffname LIKE '%$searchname%'
-					ORDER BY staffname ASC;";
-			$result = mysqli_query($conn, $sql);
-			if($result -> num_rows > 0) {
-				while($row = $result -> fetch_assoc()) {
-					echo "Name: <a href='staffinformationresult.php'>" .$row['staffname']. "</a><br>";
-				}
-			}
-			else {
-				echo "There is 0 results";
-			}
-		}
+		// if(isset($_GET['search-button'])) {	
+		// 	$searchname = mysqli_real_escape_string($conn, $_GET['search']);
+		// 	$_SESSION['search'] = $searchname; //PASS THE VARIABLE TO staffinformationresult.php
+		// 	echo "<h3>Hasil Carian</h3>";
+		// 	$sql = "SELECT staffname
+		// 			FROM staff
+		// 			WHERE staffname LIKE '%$searchname%'
+		// 			ORDER BY staffname ASC;";
+		// 	$result = mysqli_query($conn, $sql);
+		// 	if($result -> num_rows > 0) {
+		// 		while($row = $result -> fetch_assoc()) {
+		// 			echo "Name: <a href='staffinformationresult.php'>" .$row['staffname']. "</a><br>";
+		// 		}
+		// 	}
+		// 	else {
+		// 		echo "There is 0 results";
+		// 	}
+		// }
 		?>
 		</form>
 	</section>

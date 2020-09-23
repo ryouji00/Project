@@ -31,8 +31,10 @@
 							?></b>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-							<button name="deletebutton" type="button" class="btn btn-danger">Padam</button>
+							<form method="post">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+								<button name="delete-button" type="button" href="../index/staffinformationresult.php" class="btn btn-danger">Padam</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -40,7 +42,7 @@
 		</form>
 		<?php
 		$confirmstaff = $_SESSION['test'];
-		if(isset($_POST['deletebutton'])) {
+		if(isset($_POST['delete-button'])) {
 			echo "Matching<br>";
 			$sql = "DELETE FROM staff
 					WHERE staffid = '$confirmstaff';";
