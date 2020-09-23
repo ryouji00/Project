@@ -18,10 +18,10 @@
 					echo "<br>Username: " .$row['staffusername'];
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>Unit: " .$row['staffunit'];
+					include "../include/deletestaff.inc.php";
 				}
 			}
 			echo "<br>";
-			include "../include/deletestaff.inc.php";
 			?>
 			<br>
 			<!-- Retrieve data -->
@@ -59,7 +59,6 @@
 				</div>
 				<br>
 				<!-- Change Staff Unit -->
-				<label>Choose new unit: </label>
 				<select name="newunit">
 					<option value="0">Unit Rangkaian</option>
 					<option value="1">Unit Sokongan Teknikal</option>
@@ -77,6 +76,7 @@
 					<option value="14">Unit Perancangan dan Inovasi ICT</option>
 				</select>
 				<button class="btn btn-secondary btn-sm" name="change-email">edit</button>
+				<br>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<hr>
 				<h4>Change trip information</h4>
