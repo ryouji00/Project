@@ -1,7 +1,8 @@
 <?php
 session_start();
+require "header.php";
 if($_SESSION['usernamestaff']) {
-require "header.php";?>
+?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
 <script>
