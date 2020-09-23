@@ -26,6 +26,7 @@
 			<br>
 			<!-- Retrieve data -->
 			<?php
+			$currentid = $_SESSION['currentid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffunit
 					FROM staff
 					WHERE staffid = '$currentid';";
