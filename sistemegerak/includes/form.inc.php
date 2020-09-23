@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['send-submit'])){
-
+SESSION_START();
 	require 'dbh.inc.php';
 
 	$category = $_POST['place-go'];
@@ -34,14 +34,22 @@ if(isset($_POST['send-submit'])){
 				exit();
 			}
 			else{
-				$sql = "INSERT INTO destination ('category','workname','placename','tripstart','tripend','timestart','timeend','replaceofficer') VALUE (?,?,?,?,?,?,?,?)";
+				 $sql = "INSERT INTO destination (category,workname,placename,tripstart,tripend,timestart,timeend,replaceofficer,staffid) VALUE (?,?,?,?,?,?,?,?,?)";
+				// $sql = "INSERT INTO destination (staffid) VALUE (?)";
+				
 				$stmt = mysqli_stmt_init($conn);
+				// mysqli_stmt_prepare($stmt,$sql);
+				//print_r(mysqli_stmt_prepare($stmt,$sql)); exit;
+				//print_r($sql); exit;
 				if(!mysqli_stmt_prepare($stmt,$sql)){
 					header("Location: ../form.php?error=sqlerror2");
 					exit();
 				}
 				else{
-					mysqli_stmt_bind_param($stmt,"sssssssss",$category,$worknama,$placename,$tripstart,$tripend,$timestart,$timeend,$pegawai,$staffid);
+					
+					 mysqli_stmt_bind_param($stmt,"sssssssss",$category,$worknama,$placename,$tripstart,$tripend,$timestart,$timeend,$pegawai,$staffid);
+					// mysqli_stmt_bind_param($stmt,"s",$staffid);
+					// print_r(mysqli_stmt_execute($stmt)); exit;
 					mysqli_stmt_execute($stmt);
 					header("Location: ../form.php?form=success");
 					exit();
