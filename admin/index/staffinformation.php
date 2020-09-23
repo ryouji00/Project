@@ -50,7 +50,7 @@ if($_SESSION['usernamestaff']) {
 								<td><?php echo $row["staffunit"];?></td>
 								<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
 							</tr>
-							<?php
+					<?php
 							$i++;
 						}
 					}
