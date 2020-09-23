@@ -1,30 +1,29 @@
 <?php
 if(isset($_POST['currentid'])) {
 	$currentid = $_POST['currentid'];
-	
-include_once 'configdb.php';
-session_start();
-$_SESSION['test'] = $currentid;
-				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
-						FROM destination
-						WHERE staffid = $currentid
-						ORDER BY tripstart ASC
-						LIMIT 2;";
-				$result2 = $conn -> query($sql2);
-				if(mysqli_num_rows($result2) > 0) {
-					while($row2 = mysqli_fetch_array($result2)) {
-						include "../include/dateformat.inc.php";
-						echo "Kategori: " .$row2["category"];
-						echo "<br>Tugasan: " .$row2["workname"];
-						echo "<br>Lokasi: " .$row2["placename"];
-						echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
-						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
-						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
-					}
-				}
-				else {
-					echo "Tiada rekod";
-				}
+	include_once 'configdb.php';
+	session_start();
+	$_SESSION['test'] = $currentid;
+	$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
+			FROM destination
+			WHERE staffid = $currentid
+			ORDER BY tripstart ASC
+			LIMIT 2;";
+	$result2 = $conn -> query($sql2);
+	if(mysqli_num_rows($result2) > 0) {
+		while($row2 = mysqli_fetch_array($result2)) {
+			include "../include/dateformat.inc.php";
+			echo "Kategori: " .$row2["category"];
+			echo "<br>Tugasan: " .$row2["workname"];
+			echo "<br>Lokasi: " .$row2["placename"];
+			echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
+			echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
+			echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+		}
+	}
+	else {
+		echo "Tiada rekod";
+	}
 	exit;
 }
 require "header.php";

@@ -86,7 +86,8 @@
 				<?php
 				$sql = "SELECT *
 						FROM destination
-						WHERE staffid = $currentid;";
+						WHERE staffid = $currentid
+						LIMIT 2;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {
