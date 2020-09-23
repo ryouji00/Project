@@ -1,6 +1,37 @@
 <?php
+if(isset($_POST['currentid'])) {
+	$currentid = $_POST['currentid'];
+	
+include_once 'configdb.php';
+session_start();
+$_SESSION['test'] = $currentid;
+				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
+						FROM destination
+						WHERE staffid = $currentid
+						ORDER BY tripstart ASC
+						LIMIT 2;";
+				$result2 = $conn -> query($sql2);
+				if(mysqli_num_rows($result2) > 0) {
+					while($row2 = mysqli_fetch_array($result2)) {
+						include "../include/dateformat.inc.php";
+						echo "Kategori: " .$row2["category"];
+						echo "<br>Tugasan: " .$row2["workname"];
+						echo "<br>Lokasi: " .$row2["placename"];
+						echo "<br>Pegawai pengganti: " .$row2["replaceofficer"];
+						echo "<br>Dari: " .$newDate. " hingga " .$newDate2;
+						echo "<br>Bermula: " .$newTime . " hingga " .$newTime2;
+					}
+				}
+				else {
+					echo "Tiada rekod";
+				}
+	exit;
+}
 require "header.php";
 if($_SESSION['idstaff']) {
+
+
+
 ?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
@@ -40,14 +71,14 @@ if($_SESSION['idstaff']) {
 					$i = 1;
 					if($result -> num_rows > 0) {
 						while($row = $result -> fetch_array()) {
-							$_SESSION['currentid'] = $row['staffid'];
+							//$_SESSION['currentid'] = $row['staffid'];
 							$id = $row['staffid'];
 					?>
 							<tr>
 								<td class="bil"><?php echo $i;?></td>
 								<td><?php echo $row["staffname"];?></td>
 								<td><?php echo $row["staffunit"];?></td>
-								<td class="text-center"><button id="infobutton" type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#exampleModal">View</button></td>
+								<td class="text-center"><button id="infobutton" data-id="<?php echo $id;?>" type="button" class="btn btn-sm btn-secondary infobutton" data-toggle="modal" data-target="#exampleModal">View</button></td>
 							</tr>
 					<?php
 							$i++;
@@ -84,7 +115,7 @@ if($_SESSION['idstaff']) {
     		</div>
     		<div class="modal-body">
 				<?php
-				$currentid = $_SESSION['currentid'];
+				/* $currentid = $_SESSION['currentid'];
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 						FROM destination
 						WHERE staffid = $currentid
@@ -104,7 +135,7 @@ if($_SESSION['idstaff']) {
 				}
 				else {
 					echo "Tiada rekod";
-				}
+				} */
 				?>
     		</div>
     		<div class="modal-footer">
@@ -146,10 +177,20 @@ if($_SESSION['idstaff']) {
 					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 				});
 			});
+
+			$('.infobutton').on("click", function() {
+				var value = $(this).attr('data-id');
+				// alert(value);
+
+				$.post('staffinformation.php', 'currentid='+value, function(result) {
+					// alert(result);
+					$('#exampleModal .modal-body').html(result);
+				})
+			});
 		});
-		$('.popover-dismiss').popover({
-			trigger: 'focus'
-		})
+		// $('.popover-dismiss').popover({
+		// 	trigger: 'focus'
+		// })
 	</script>
 	<?php require "footer.php";?>
 <?php
