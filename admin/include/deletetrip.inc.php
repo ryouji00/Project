@@ -20,7 +20,7 @@
                             <b><?php
 							$sql = "SELECT *
 									FROM destination
-									WHERE staffid = 7";
+									WHERE staffid = $currentid";
 							$result = $conn -> query($sql);
 							while($row2 = $result -> fetch_assoc()) {
                             	include "dateformat.inc.php";
@@ -43,7 +43,7 @@
 		<?php
         // delete trip confirmation
         $confirmdestid = $_SESSION['confirmdestid'];
-        $searchid = $_SESSION['search'];
+        $searchid = $_SESSION['currentid'];
 		if(isset($_POST['deletebutton'])) {
 			$sql = "DELETE FROM destination
 					WHERE staffid = '$searchid' AND destinationid = '$confirmdestid';";

@@ -7,10 +7,10 @@
 		<section id="result">
 			<h3>Detail pegawai</h3>
 			<?php
-			$id = $_SESSION['currentid'];
+			$currentid = $_SESSION['currentid'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
 					FROM staff
-					WHERE staffid = $id;";
+					WHERE staffid = $currentid;";
 			$result = $conn -> query($sql);
 			if($result -> num_rows > 0) {
 				while($row = $result -> fetch_assoc()) {
