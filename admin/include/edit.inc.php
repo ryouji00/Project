@@ -47,4 +47,6 @@
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
 				<!-- Delete trip -->
-				<?php include "deletetrip.inc.php";?>
+				<?php 
+				$confirmdestid = $_SESSION['confirmdestid'];
+				//include "deletetrip.inc.php";?>

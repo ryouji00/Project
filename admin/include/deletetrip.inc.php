@@ -7,7 +7,7 @@
 	<section>
 		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
-			<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal fade" id="Modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -20,7 +20,7 @@
                             <b><?php
 							$sql = "SELECT *
 									FROM destination
-									WHERE staffid = $currentid";
+									WHERE staffid = $currentid AND destinationid = $confirmdestid;";
 							$result = $conn -> query($sql);
 							while($row2 = $result -> fetch_assoc()) {
                             	include "dateformat.inc.php";
