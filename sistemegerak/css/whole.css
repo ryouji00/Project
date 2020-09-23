@@ -10,6 +10,12 @@
     font-family: sans-serif;
 }
 
+.tajuk {
+    font-family: monospace, Courier;
+    text-decoration: none;
+    color: black;
+}
+
 body {
     font-family: sans-serif;
     background-color: rgb(168, 218, 252);

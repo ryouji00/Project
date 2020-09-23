@@ -20,7 +20,7 @@ include_once 'includes/dbh.inc.php';
 <div id="logo">
 		<img class="firstimg" src="img\jatanegara2.png" width="160">
 		<img class="secondimg" src="img\kkm2.png" width="160">
-		<span><h1 class="tajuk">Sistem E-Gerakan Pegawai</h1></span>
+		<span><h1 class="tajuk">Sistem E-Pergerakan Pegawai</h1></span>
 
 		
 	</div>
