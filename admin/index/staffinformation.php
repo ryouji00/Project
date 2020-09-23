@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "header.php";
 if($_SESSION['usernamestaff']) {
 ?>
