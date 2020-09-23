@@ -60,7 +60,7 @@ if($_SESSION['usernamestaff']) {
 		</table>
 	</div>
 	<!-- Check whether the var has input -->
-	<p><b>current id:</b> <?php $_SESSION['currentid']?></p>
+	<p><b>current id:</b> <?php echo $_SESSION['currentid']?></p>
 	<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">

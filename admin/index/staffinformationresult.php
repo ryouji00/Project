@@ -18,6 +18,7 @@
 					echo "<br>Username: " .$row['staffusername'];
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>Unit: " .$row['staffunit'];
+					echo "<br>";
 					include "../include/deletestaff.inc.php";
 				}
 			}
