@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-if($_SESSION['usernamestaff']) {
+if($_SESSION['idstaff']) {
 ?>
 	<title>Sistem E-Gerak | Halaman Utama</title>
 </head>
@@ -35,7 +35,7 @@ if($_SESSION['usernamestaff']) {
 					$i = 1;
 					$sql = "SELECT staffname, staffunit, staffid
 							FROM staff
-							ORDER BY staffname DESC;";
+							ORDER BY staffname ASC;";
 					$result = $conn -> query($sql);
 					$i = 1;
 					if($result -> num_rows > 0) {
