@@ -35,7 +35,7 @@ if($_SESSION['usernamestaff']) {
 					$i = 1;
 					$sql = "SELECT staffname, staffunit, staffid
 							FROM staff
-							ORDER BY staffname ASC;";
+							ORDER BY staffname DESC;";
 					$result = $conn -> query($sql);
 					$i = 1;
 					if($result -> num_rows > 0) {
@@ -59,7 +59,19 @@ if($_SESSION['usernamestaff']) {
 		</table>
 	</div>
 	<!-- Check whether the var has input -->
-	<p><b>current id:</b> <?php echo $_SESSION['currentid']?></p>
+	<?php
+	$currentid = $_SESSION['currentid'];
+	$sql = "SELECT staffname
+			FROM staff
+			WHERE staffid = $currentid;";
+	$result = $conn -> query($sql);
+	while($row = $result -> fetch_assoc()) {
+		?>
+		<p><b>current id:</b> <?php echo $_SESSION['currentid']?></p>
+		<p><b>current name:</b> <?php echo $row['staffname'];?></p>
+		<?php
+	}
+	?>
 	<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">
