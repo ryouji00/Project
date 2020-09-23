@@ -43,7 +43,7 @@ if($_SESSION['usernamestaff']) {
 						while($row = $result -> fetch_assoc()) {
 							$_SESSION['currentid'] = $row['staffid'];
 							$id = $row['staffid'];
-							//require("../include/dashboard.inc.php"); ?>
+					?>
 							<tr>
 								<td class="bil"><?php echo $i;?></td>
 								<td><?php echo $row["staffname"];?></td>
