@@ -6,7 +6,6 @@
 		<hr>
 		<section id="result">
 			<h3>Detail pegawai</h3>
-			name: <?php echo $_SESSION['test'];?>
 			<?php
 			$currentid = $_SESSION['test'];
 			$sql = "SELECT staffname, staffemail, staffusername, staffid, staffunit
