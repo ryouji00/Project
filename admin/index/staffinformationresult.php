@@ -88,7 +88,7 @@
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {
 						include "../include/dateformat.inc.php";
-						echo "<br>Trip ID: " .$row2['destinationId'];
+						echo "<br>Trip ID: " .$row2['destinationid'];
 						echo "<br>Category: " .$row2['category'];
 						echo "<br>Work name: " .$row2['workname'];
 						echo "<br>Place held: " .$row2['placename'];

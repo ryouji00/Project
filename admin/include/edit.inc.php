@@ -47,4 +47,4 @@
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
 				<!-- Delete trip -->
-				<?php include "../include/deletetrip.inc.php";?>
+				<?php include "deletetrip.inc.php";?>
