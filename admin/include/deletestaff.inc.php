@@ -20,7 +20,7 @@
 							<b><?php
 							$sql = "SELECT staffname, staffusername, staffid, staffemail, staffunit
 									FROM staff
-									WHERE staffid = 7";
+									WHERE staffid = $currentid";
 							$result = $conn -> query($sql);
 							while($row = $result -> fetch_assoc()) {
 								echo "Name: " .$row['staffname'];
@@ -39,7 +39,7 @@
 			</div>
 		</form>
 		<?php
-		$confirmstaff = $_SESSION['staffid'];
+		$confirmstaff = $_SESSION['currentid'];
 		if(isset($_POST['deletebutton'])) {
 			echo "Matching<br>";
 			$sql = "DELETE FROM staff
