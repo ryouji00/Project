@@ -141,6 +141,6 @@ if($_SESSION['usernamestaff']) {
 <?php
 }
 else {
-    header("location:../sistemegerak/login.php");
+    header("location:../../sistemegerak/login.php");
 }
 ?>
