@@ -75,7 +75,8 @@ if($_SESSION['usernamestaff']) {
 				$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 						FROM destination
 						WHERE staffid = $currentid
-						ORDER BY tripstart ASC;";
+						ORDER BY tripstart ASC
+						LIMIT 2;";
 				$result2 = $conn -> query($sql2);
 				if(mysqli_num_rows($result2) > 0) {
 					while($row2 = mysqli_fetch_array($result2)) {
