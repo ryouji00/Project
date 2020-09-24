@@ -1,7 +1,7 @@
 				<!-- Confirming trip -->
 				<div>
 					<br>
-					<input type="text" name="confirmdestid" placeholder="Destination ID for confirmation">
+					<input type="text" name="confirmdestid" placeholder="Trip ID for confirmation">
 				</div>
 				<br>
 				<!-- Change category -->
@@ -46,7 +46,3 @@
 				</div>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
-				<!-- Delete trip -->
-				<?php 
-				$confirmdestid = $_SESSION['confirmdestid'];
-				//include "deletetrip.inc.php";?>

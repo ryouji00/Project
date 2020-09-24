@@ -210,7 +210,7 @@
 					$newcat = $_GET['newcategory'];
 					$sql = "UPDATE destination
 							SET category = '$newcat'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -223,7 +223,7 @@
 					$newdestname = $_GET['newdestname'];
 					$sql = "UPDATE destination
 							SET placename = '$newdestname'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -236,7 +236,7 @@
 					$newworkname = $_GET['newworkname'];
 					$sql = "UPDATE destination
 							SET workname = '$newworkname'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -250,7 +250,7 @@
 					$newend = $_GET['newend'];
 					$sql = "UPDATE destination
 							SET tripstart = '$newstart', tripend = '$newend'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -264,7 +264,7 @@
 					$newendtime = $_GET['newendtime'];
 					$sql = "UPDATE destination
 							SET timestart = '$newstarttime', timeend = '$newendtime'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
