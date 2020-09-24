@@ -1,4 +1,6 @@
-	<?php require_once "header.php";?>
+	<?php
+	require_once "header.php";
+	?>
 	<title>Sistem E-Gerak | Hasil Carian Pegawai</title>
 </head>
 <body id="body">
@@ -43,23 +45,25 @@
 						}
 					}
 					echo "<br>";
-					include "../include/deletestaff.inc.php";
-					$confirmstaff = $_SESSION['test'];
-					if(isset($_POST['delete-button'])) {
-						$sql2 = "DELETE FROM destination
-								WHERE staffid = '$confirmstaff';";
-						$sql = "DELETE FROM staff
-								WHERE staffid = '$confirmstaff';";
-						$conn -> query($sql2);
-						if ($conn -> query($sql) === TRUE) {
-							echo "<br>Record deleted successfully";
-			?>
-							<meta http-equiv="refresh" content="3;url=staffinformation.php" />
-							<p><b>Redirecting in 3 seconds...</b></p>
-			<?php
-						}
-						else {
-							echo "Error deleting record: " . $conn->error;
+					if($_SESSION['idstaff'] != $_SESSION['test']) {
+						include "../include/deletestaff.inc.php";
+						$confirmstaff = $_SESSION['test'];
+						if(isset($_POST['delete-button'])) {
+							$sql2 = "DELETE FROM destination
+									WHERE staffid = '$confirmstaff';";
+							$sql = "DELETE FROM staff
+									WHERE staffid = '$confirmstaff';";
+							$conn -> query($sql2);
+							if ($conn -> query($sql) === TRUE) {
+								echo "<br>Record deleted successfully";
+				?>
+								<meta http-equiv="refresh" content="3;url=staffinformation.php" />
+								<p><b>Redirecting in 3 seconds...</b></p>
+				<?php
+							}
+							else {
+								echo "Error deleting record: " . $conn->error;
+							}
 						}
 					}
 				}
