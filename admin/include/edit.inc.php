@@ -1,6 +1,7 @@
 				<!-- Confirming trip -->
 				<div>
 					<br>
+					<lable><b>Masukkan ID: </b></lable>
 					<input class="idtrip" type="text" name="confirmdestid" placeholder="Trip ID for confirmation">  <i class="fa fa-asterisk" style="font-size:14px;color:red"></i>
 				</div>
 				<br>
