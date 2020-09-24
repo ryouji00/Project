@@ -17,8 +17,9 @@
 					echo "<br>Name: " .$row['staffname'];
 					echo "<br>Username: " .$row['staffusername'];
 					echo "<br>E-Mail: " .$row['staffemail'];
-					echo "<br>Unit: " .$row['staffunit'];
+					echo "<br>" .$row['staffunit'];
 					echo "<br>";
+					include "../include/changeadmin.inc.php";
 					include "../include/deletestaff.inc.php";
 				}
 			}
@@ -86,7 +87,7 @@
 				$sql = "SELECT *
 						FROM destination
 						WHERE staffid = $currentid
-						LIMIT 2;";
+						LIMIT 5;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
 					while ($row2 = $result -> fetch_assoc()) {
@@ -108,125 +109,128 @@
 				<br>
 			</form>
 			<?php
-			$confirmdestid = $_GET['confirmdestid'];
-			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
-			// change staff name
-			if(isset($_GET['change-name'])) {
-				$newname = $_GET['newname'];
-				$sql = "UPDATE staff
-						SET staffname = '$newname'
-						WHERE staffid = '$currentid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
+			if(isset($_GET['confirmdestid']))
+			{
+				$confirmdestid = $_GET['confirmdestid'];
+				$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
+				// change staff name
+				if(isset($_GET['change-name'])) {
+					$newname = $_GET['newname'];
+					$sql = "UPDATE staff
+							SET staffname = '$newname'
+							WHERE staffid = '$currentid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
+				//change username
+				elseif(isset($_GET['change-username'])) {
+					$newusername = $_GET['newusername'];
+					$sql = "UPDATE staff
+							SET staffusername = '$newusername'
+							WHERE staffid = '$currentid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-			}
-			//change username
-			elseif(isset($_GET['change-username'])) {
-				$newusername = $_GET['newusername'];
-				$sql = "UPDATE staff
-						SET staffusername = '$newusername'
-						WHERE staffid = '$currentid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
+				//change email
+				elseif(isset($_GET['change-email'])) {
+					$newemail = $_GET['newemail'];
+					$sql = "UPDATE staff
+							SET staffemail = '$newemail'
+							WHERE staffid = '$currentid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
+				//change unit
+				elseif(isset($_GET['change-unit'])) {
+					$newunit = $_GET['newunit'];
+					$sql = "UPDATE staff
+							SET staffunit = '$newunit'
+							WHERE staffid = '$currentid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-			}
-			//change email
-			elseif(isset($_GET['change-email'])) {
-				$newemail = $_GET['newemail'];
-				$sql = "UPDATE staff
-						SET staffemail = '$newemail'
-						WHERE staffid = '$currentid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
+				//change category
+				elseif(isset($_GET['change-category'])) {
+					$newcat = $_GET['newcategory'];
+					$sql = "UPDATE destination
+							SET category = '$newcat'
+							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
+				//change placename
+				elseif(isset($_GET['change-destname'])) {
+					$newdestname = $_GET['newdestname'];
+					$sql = "UPDATE destination
+							SET placename = '$newdestname'
+							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-			}
-			//change unit
-			elseif(isset($_GET['change-unit'])) {
-				$newunit = $_GET['newunit'];
-				$sql = "UPDATE staff
-						SET staffunit = '$newunit'
-						WHERE staffid = '$currentid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
+				//change workname
+				elseif(isset($_GET['change-workname'])) {
+					$newworkname = $_GET['newworkname'];
+					$sql = "UPDATE destination
+							SET workname = '$newworkname'
+							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
+				//change date
+				elseif(isset($_GET['change-date'])) {
+					$newstart = $_GET['newstart'];
+					$newend = $_GET['newend'];
+					$sql = "UPDATE destination
+							SET tripstart = '$newstart', tripend = '$newend'
+							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
-			}
-			//change category
-			elseif(isset($_GET['change-category'])) {
-				$newcat = $_GET['newcategory'];
-				$sql = "UPDATE destination
-						SET category = '$newcat'
-						WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
-				}
-			}
-			//change placename
-			elseif(isset($_GET['change-destname'])) {
-				$newdestname = $_GET['newdestname'];
-				$sql = "UPDATE destination
-						SET placename = '$newdestname'
-						WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
-				}
-			}
-			//change workname
-			elseif(isset($_GET['change-workname'])) {
-				$newworkname = $_GET['newworkname'];
-				$sql = "UPDATE destination
-						SET workname = '$newworkname'
-						WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
-				}
-			}
-			//change date
-			elseif(isset($_GET['change-date'])) {
-				$newstart = $_GET['newstart'];
-				$newend = $_GET['newend'];
-				$sql = "UPDATE destination
-						SET tripstart = '$newstart', tripend = '$newend'
-						WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
-				}
-			}
-			//change date
-			elseif(isset($_GET['change-time'])) {
-				$newstarttime = $_GET['newstarttime'];
-				$newendtime = $_GET['newendtime'];
-				$sql = "UPDATE destination
-						SET timestart = '$newstarttime', timeend = '$newendtime'
-						WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
-				if ($conn->query($sql) === TRUE) {
-					echo "<hr>Record updated successfully";
-				}
-				else {
-					echo "<hr>Error updating record: " . $conn->error;
+				//change date
+				elseif(isset($_GET['change-time'])) {
+					$newstarttime = $_GET['newstarttime'];
+					$newendtime = $_GET['newendtime'];
+					$sql = "UPDATE destination
+							SET timestart = '$newstarttime', timeend = '$newendtime'
+							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
 				}
 			}
 			?>

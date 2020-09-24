@@ -3,15 +3,15 @@
   $('#myInput').trigger('focus')
 })
 </script>
-	<button class="btn btn-danger mt-3" name="button-delete" type="submit" data-toggle="modal" data-target="#exampleModal">Padam data pegawai</button>
+	<button class="btn btn-success mt-3" name="button-change" type="submit" data-toggle="modal" data-target="#Modal">Jadikan Pentadbir</button>
 	<section>
 		<form method="POST" action="../index/staffinformationresult.php">
 			<!-- Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal fade" id="Modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3 class="modal-title" id="exampleModalLongTitle">Adakah anda pasti untuk memadam data pegawai tersebut?</h3>
+							<h3 class="modal-title" id="exampleModalLongTitle">Adakah anda pasti dengan perubahan tersebut?</h3>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -33,7 +33,7 @@
 						<div class="modal-footer">
 							<form method="post">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-								<button name="delete-button" type="button" class="btn btn-danger">Padam</button>
+								<button name="change-button" type="button" href="../index/staffinformationresult.php" class="btn btn-success">Ubah</button>
 							</form>
 						</div>
 					</div>
@@ -41,14 +41,14 @@
 			</div>
 		</form>
 		<?php
-		$confirmstaff = $_SESSION['test'];
-		if(isset($_POST['delete-button'])) {
-			$sql2 = "DELETE FROM destination
+        $confirmstaff = $_SESSION['test'];
+        $admin = "admin";
+		if(isset($_POST['change-button'])) {
+			$sql = "UPDATE staff
+                    SET staffposition = $admin
 					WHERE staffid = '$confirmstaff';";
-			$sql = "DELETE FROM staff
-					WHERE staffid = '$confirmstaff';";
-			$conn -> query($sql2, $sql);
-			if ($conn -> query($sq2, sql) === TRUE) {
+			$conn -> query($sql);
+			if ($conn -> query($sql) === TRUE) {
 				echo "Record deleted successfully";
 			}
 			else {

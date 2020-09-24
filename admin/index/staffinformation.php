@@ -8,7 +8,7 @@ if(isset($_POST['currentid'])) {
 			FROM destination
 			WHERE staffid = $currentid
 			ORDER BY tripstart ASC
-			LIMIT 2;";
+			LIMIT 5;";
 	$result2 = $conn -> query($sql2);
 	if(mysqli_num_rows($result2) > 0) {
 		while($row2 = mysqli_fetch_array($result2)) {
