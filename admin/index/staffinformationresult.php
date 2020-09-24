@@ -4,9 +4,9 @@
 	<title>Sistem E-Gerak | Hasil Carian Pegawai</title>
 </head>
 <body id="body">
-	<div>
+	<section class="container">
 		<hr>
-		<section id="result">
+		<section class="editstaff1">
 			<h3>Detail pegawai</h3>
 			<?php
 			$currentid = $_SESSION['test'];
@@ -126,8 +126,10 @@
 				<button class="btn btn-secondary btn-sm" name="change-unit">edit</button>
 				<br>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
-				<hr>
-				<h4>Change trip information</h4>
+		</section>
+		<section class="edittrip1">
+			<br>	
+			<h4>Change trip information</h4>
 				<?php
 				$sql = "SELECT *
 						FROM destination
@@ -308,5 +310,5 @@
 			?>
 			</form>
 		</section>
-	</div>
+	</section>
 	<?php include "footer.php";?>

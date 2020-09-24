@@ -1,7 +1,8 @@
 				<!-- Confirming trip -->
 				<div>
 					<br>
-					<input type="text" name="confirmdestid" placeholder="Trip ID for confirmation">
+					<lable><b>Masukkan ID: </b></lable>
+					<input class="idtrip" type="text" name="confirmdestid" placeholder="Trip ID for confirmation">  <i class="fa fa-asterisk" style="font-size:14px;color:red"></i>
 				</div>
 				<br>
 				<!-- Change category -->
