@@ -11,7 +11,7 @@
 			$sql = "SELECT s.staffname, s.staffunit
 					FROM staff s, destination d
 					WHERE s.staffid = d.staffid
-					ORDER BY tripstart DESC;";
+					ORDER BY tripstart ASC;";
 			$result = $conn -> query($sql);
 			while($row = $result -> fetch_assoc()) {
 				echo "<br>Name: " .$row['staffname']. "<br> " .$row['staffunit']. "<hr>";
