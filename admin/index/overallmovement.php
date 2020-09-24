@@ -23,9 +23,10 @@
 			<?php
 			$sql = "SELECT *
 					FROM destination d, staff s
-					WHERE s.staffid = d.staffid
+					WHERE s.staffid = d.staffid AND d.category = 'Mesyuarat'
 					ORDER BY tripstart DESC;";
 			$result = $conn -> query($sql);
+			echo "<br><h5>Mesyuarat</h5><hr>";
 			if($result -> num_rows > 0) {
 				while($row2 = $result -> fetch_assoc()) {
 					require "../include/dateformat.inc.php";
@@ -37,6 +38,87 @@
 					echo "<br>Time start: " .$newTime. " to " .$newTime2;
 					echo "<hr>";
 				}
+			}
+			else {
+				echo "Tiada Rekod";
+			}
+			?>
+		</section>
+		<br>
+		<section class="resultoverall">
+			<?php
+			$sql = "SELECT *
+					FROM destination d, staff s
+					WHERE s.staffid = d.staffid AND d.category = 'Bengkel'
+					ORDER BY tripstart DESC;";
+			$result = $conn -> query($sql);
+			echo "<br><h5>Bengkel</h5><hr>";
+			if($result -> num_rows > 0) {
+				while($row2 = $result -> fetch_assoc()) {
+					require "../include/dateformat.inc.php";
+					echo "<br>Name: " .$row2['staffname'];
+					echo "<br>Category: " .$row2['category'];
+					echo "<br>Name of work: " .$row2['workname'];
+					echo "<br>Place been: " .$row2['placename'];
+					echo "<br>From: " .$newDate. " to " .$newDate2;
+					echo "<br>Time start: " .$newTime. " to " .$newTime2;
+					echo "<hr>";
+				}
+			}
+			else {
+				echo "Tiada Rekod";
+			}
+			?>
+		</section>
+		<br>
+		<section class="resultoverall">
+			<?php
+			$sql = "SELECT *
+					FROM destination d, staff s
+					WHERE s.staffid = d.staffid AND d.category = 'Kursus'
+					ORDER BY tripstart DESC;";
+			$result = $conn -> query($sql);
+			echo "<br><h5>Kursus</h5><hr>";
+			if($result -> num_rows > 0) {
+				while($row2 = $result -> fetch_assoc()) {
+					require "../include/dateformat.inc.php";
+					echo "<br>Name: " .$row2['staffname'];
+					echo "<br>Category: " .$row2['category'];
+					echo "<br>Name of work: " .$row2['workname'];
+					echo "<br>Place been: " .$row2['placename'];
+					echo "<br>From: " .$newDate. " to " .$newDate2;
+					echo "<br>Time start: " .$newTime. " to " .$newTime2;
+					echo "<hr>";
+				}
+			}
+			else {
+				echo "Tiada Rekod";
+			}
+			?>
+		</section>
+		<br>
+		<section class="resultoverall">
+			<?php
+			$sql = "SELECT *
+					FROM destination d, staff s
+					WHERE s.staffid = d.staffid AND d.category = 'Lawatan Tapak'
+					ORDER BY tripstart DESC;";
+			$result = $conn -> query($sql);
+			echo "<br><h5>Lawatan Tapak</h5><hr>";
+			if($result -> num_rows > 0) {
+				while($row2 = $result -> fetch_assoc()) {
+					require "../include/dateformat.inc.php";
+					echo "<br>Name: " .$row2['staffname'];
+					echo "<br>Category: " .$row2['category'];
+					echo "<br>Name of work: " .$row2['workname'];
+					echo "<br>Place been: " .$row2['placename'];
+					echo "<br>From: " .$newDate. " to " .$newDate2;
+					echo "<br>Time start: " .$newTime. " to " .$newTime2;
+					echo "<hr>";
+				}
+			}
+			else {
+				echo "Tiada Rekod";
 			}
 			?>
 		</section>

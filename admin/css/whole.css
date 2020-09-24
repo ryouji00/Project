@@ -69,7 +69,8 @@ th {
     align-content: center;
     background-color: white;
     border-style: solid;
-    max-width: 500px;
+    min-width: 250px;
+    max-width: 550px;
     padding-left: 20px;
     margin-left: 20px;
     box-shadow: 5px 10px #888888;
