@@ -154,8 +154,6 @@
 				<br>
 			</form>
 			<?php
-			$confirmdestid = $_GET['confirmdestid'];
-			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
 			// change staff name
 			if(isset($_GET['change-name'])) {
 				$newname = $_GET['newname'];
@@ -222,6 +220,8 @@
 			}
 			if(isset($_GET['confirmdestid']))
 			{
+				$confirmdestid = $_GET['confirmdestid'];
+				$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
 				//change category
 				if(isset($_GET['change-category'])) {
 					$newcat = $_GET['newcategory'];
