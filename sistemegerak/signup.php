@@ -13,7 +13,7 @@
  		<section class="section-default">
 		<h1>Signup</h1>
 		<?php
-		if(isset($_GET['signup'])) {
+		if(isset($_GET['signup']) || isset($_GET['error'])) {
 			if(isset($_GET["error"])){
 				if($_GET["error"] == "emptyfields"){
 					echo '<p class="signuperror">Fill in all fields!</p>';
