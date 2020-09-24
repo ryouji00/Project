@@ -138,14 +138,14 @@ thead {
 
 /* Staff Information Result */
 
-#result {
+.editstaff1,
+.edittrip1 {
     margin: auto;
     border-style: solid;
     background-color: white;
     padding-left: 20px;
     padding-right: 20px;
     color: black;
-    /* max-height: 500px; */
     padding-bottom: 20px;
     width: 600px;
     margin-bottom: 20px;
