@@ -123,7 +123,7 @@
 					<option value="Unit Pengurusan, Pentadbiran, Kewangan">Unit Pengurusan, Pentadbiran, Kewangan</option>
 					<option value="Unit Perancangan dan Inovasi ICT">Unit Perancangan dan Inovasi ICT</option>
 				</select>
-				<button class="btn btn-secondary btn-sm" name="change-email">edit</button>
+				<button class="btn btn-secondary btn-sm" name="change-unit">edit</button>
 				<br>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<hr>
@@ -154,70 +154,85 @@
 				<br>
 			</form>
 			<?php
+			$confirmdestid = $_GET['confirmdestid'];
+			$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
+			// change staff name
+			if(isset($_GET['change-name'])) {
+				$newname = $_GET['newname'];
+				$sql = "UPDATE staff
+						SET staffname = '$newname'
+						WHERE staffid = '$currentid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				?>
+					<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+				<?php
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change username
+			elseif(isset($_GET['change-username'])) {
+				$newusername = $_GET['newusername'];
+				$sql = "UPDATE staff
+						SET staffusername = '$newusername'
+						WHERE staffid = '$currentid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				?>
+					<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+				<?php
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change email
+			elseif(isset($_GET['change-email'])) {
+				$newemail = $_GET['newemail'];
+				$sql = "UPDATE staff
+						SET staffemail = '$newemail'
+						WHERE staffid = '$currentid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				?>
+					<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+				<?php
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
+			//change unit
+			elseif(isset($_GET['change-unit'])) {
+				$newunit = $_GET['newunit'];
+				$sql = "UPDATE staff
+						SET staffunit = '$newunit'
+						WHERE staffid = '$currentid';";
+				if ($conn->query($sql) === TRUE) {
+					echo "<hr>Record updated successfully";
+				?>
+					<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+				<?php
+				}
+				else {
+					echo "<hr>Error updating record: " . $conn->error;
+				}
+			}
 			if(isset($_GET['confirmdestid']))
 			{
-				$confirmdestid = $_GET['confirmdestid'];
-				$_SESSION['confirmdestid'] = $_GET['confirmdestid'];
-				// change staff name
-				if(isset($_GET['change-name'])) {
-					$newname = $_GET['newname'];
-					$sql = "UPDATE staff
-							SET staffname = '$newname'
-							WHERE staffid = '$currentid';";
-					if ($conn->query($sql) === TRUE) {
-						echo "<hr>Record updated successfully";
-					}
-					else {
-						echo "<hr>Error updating record: " . $conn->error;
-					}
-				}
-				//change username
-				elseif(isset($_GET['change-username'])) {
-					$newusername = $_GET['newusername'];
-					$sql = "UPDATE staff
-							SET staffusername = '$newusername'
-							WHERE staffid = '$currentid';";
-					if ($conn->query($sql) === TRUE) {
-						echo "<hr>Record updated successfully";
-					}
-					else {
-						echo "<hr>Error updating record: " . $conn->error;
-					}
-				}
-				//change email
-				elseif(isset($_GET['change-email'])) {
-					$newemail = $_GET['newemail'];
-					$sql = "UPDATE staff
-							SET staffemail = '$newemail'
-							WHERE staffid = '$currentid';";
-					if ($conn->query($sql) === TRUE) {
-						echo "<hr>Record updated successfully";
-					}
-					else {
-						echo "<hr>Error updating record: " . $conn->error;
-					}
-				}
-				//change unit
-				elseif(isset($_GET['change-unit'])) {
-					$newunit = $_GET['newunit'];
-					$sql = "UPDATE staff
-							SET staffunit = '$newunit'
-							WHERE staffid = '$currentid';";
-					if ($conn->query($sql) === TRUE) {
-						echo "<hr>Record updated successfully";
-					}
-					else {
-						echo "<hr>Error updating record: " . $conn->error;
-					}
-				}
 				//change category
-				elseif(isset($_GET['change-category'])) {
+				if(isset($_GET['change-category'])) {
 					$newcat = $_GET['newcategory'];
 					$sql = "UPDATE destination
 							SET category = '$newcat'
 							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
 					}
 					else {
 						echo "<hr>Error updating record: " . $conn->error;
@@ -231,6 +246,9 @@
 							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
 					}
 					else {
 						echo "<hr>Error updating record: " . $conn->error;
@@ -244,6 +262,9 @@
 							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
 					}
 					else {
 						echo "<hr>Error updating record: " . $conn->error;
@@ -258,6 +279,9 @@
 							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
 					}
 					else {
 						echo "<hr>Error updating record: " . $conn->error;
@@ -272,6 +296,9 @@
 							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
 					}
 					else {
 						echo "<hr>Error updating record: " . $conn->error;
