@@ -39,10 +39,6 @@
 		?>
  		<form action="includes/signup.inc.php" method="post"> 
     		<input type="text" name="nama" placeholder="Name">
-    		<select name="position">
-   				<option value="Admin">Admin</option>
-   				<option value="Staff">Staff</option>
-    		</select>
     		<select name="unit">
 				<option value="Unit Rangkaian">Unit Rangkaian</option>
 				<option value="Unit Sokongan Teknikal">Unit Sokongan Teknikal</option>
