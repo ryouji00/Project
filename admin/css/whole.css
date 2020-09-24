@@ -72,9 +72,10 @@ th {
     min-width: 250px;
     max-width: 550px;
     padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     margin-left: 20px;
     box-shadow: 5px 10px #888888;
-    padding-right: 20px;
     margin-bottom: 50px;
 }
 
@@ -89,10 +90,11 @@ th {
     margin-bottom: 50px;
 }
 
-.container {
+.container1 {
+    padding: 10px;
     margin: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 
