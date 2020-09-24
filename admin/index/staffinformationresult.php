@@ -42,6 +42,7 @@
 							}
 						}
 					}
+					echo "<br>";
 					include "../include/deletestaff.inc.php";
 					$confirmstaff = $_SESSION['test'];
 					if(isset($_POST['delete-button'])) {
