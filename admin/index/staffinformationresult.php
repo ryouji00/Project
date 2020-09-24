@@ -19,8 +19,45 @@
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>" .$row['staffunit'];
 					echo "<br>";
-					include "../include/changeadmin.inc.php";
+					$sql1 = "SELECT staffposition
+							FROM staff
+							WHERE staffid = $currentid;";
+					$result = $conn -> query($sql1);
+					$admin = "Admin";
+					while($row1 = $result -> fetch_assoc()) {
+						if($row1['staffposition'] != $admin) {
+							include "../include/changeadmin.inc.php";
+        					$confirmstaff = $_SESSION['test'];
+        					$admin = "admin";
+							if(isset($_POST['change-button'])) {
+								$sql = "UPDATE staff
+        					            SET staffposition = $admin
+										WHERE staffid = '$confirmstaff';";
+								$conn -> query($sql);
+								if ($conn -> query($sql) === TRUE) {
+									echo "Record deleted successfully";
+								}
+								else {
+									echo "Error deleting record: " . $conn->error;
+								}
+							}
+						}
+					}
 					include "../include/deletestaff.inc.php";
+					$confirmstaff = $_SESSION['test'];
+					if(isset($_POST['delete-button'])) {
+						$sql2 = "DELETE FROM destination
+								WHERE staffid = '$confirmstaff';";
+						$sql = "DELETE FROM staff
+								WHERE staffid = '$confirmstaff';";
+						$conn -> query($sql2);
+						if ($conn -> query($sql2, $sql) === TRUE) {
+							echo "Record deleted successfully";
+						}
+						else {
+							echo "Error deleting record: " . $conn->error;
+						}
+					}
 				}
 			}
 			echo "<br>";

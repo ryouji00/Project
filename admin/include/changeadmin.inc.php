@@ -40,20 +40,4 @@
 				</div>
 			</div>
 		</form>
-		<?php
-        $confirmstaff = $_SESSION['test'];
-        $admin = "admin";
-		if(isset($_POST['change-button'])) {
-			$sql = "UPDATE staff
-                    SET staffposition = $admin
-					WHERE staffid = '$confirmstaff';";
-			$conn -> query($sql);
-			if ($conn -> query($sql) === TRUE) {
-				echo "Record deleted successfully";
-			}
-			else {
-				echo "Error deleting record: " . $conn->error;
-			}
-		}
-		?>
 	</section>

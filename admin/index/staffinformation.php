@@ -46,86 +46,64 @@ if($_SESSION['idstaff']) {
 		<form action="staffinformation.php" method="GET">
 			<label>Masukkan nama pegawai: </label>
 			<input id="myInput" name="search" type="text" onkeyup="myFunction()">
-			<!-- <button name="search-button" type="submit">Cari</button> -->
-	<!-- Table -->
-	<div>
-		<table class="table table-sm table-bordered table-hover">
-			<thead class="thead-light text-center">
-				<tr>
-					<td>Bil.</td>
-					<td>Name</td>
-					<td>Unit</td>
-					<td>Action</td>
-				</tr>
-			</thead>
-			<tbody id="tablefortoday" class="table-responsive-sm">
-				<tr>
-					<?php
-					$i = 1;
-					$sql = "SELECT staffname, staffunit, staffid
-							FROM staff
-							ORDER BY staffname ASC;";
-					$result = $conn -> query($sql);
-					$i = 1;
-					if($result -> num_rows > 0) {
-						while($row = $result -> fetch_array()) {
-							//$_SESSION['currentid'] = $row['staffid'];
-							$id = $row['staffid'];
-					?>
-							<tr>
-								<td class="bil"><?php echo $i;?></td>
-								<td><?php echo $row["staffname"];?></td>
-								<td><?php echo $row["staffunit"];?></td>
-								<td class="text-center"><button id="infobutton" data-id="<?php echo $id;?>" type="button" class="btn btn-sm btn-secondary infobutton" data-toggle="modal" data-target="#exampleModal">View</button></td>
-							</tr>
-					<?php
-							$i++;
-						}
-					}
-					?>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-    		<div class="modal-header">
-    			<h5 class="modal-title" id="exampleModalLongTitle">Info</h5>
-    			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        			<span aria-hidden="true">&times;</span>
-    			</button>
-    		</div>
-    		<div class="modal-body"></div>
-    		<div class="modal-footer">
-    			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    			<a name="edit-button" href="../index/staffinformationresult.php" type="button" class="btn btn-primary">Edit</a>
-    		</div>
-		</div>
-	</div>
-</div>
-		<!-- Result -->
-		<?php
-		// if(isset($_GET['search-button'])) {	
-		// 	$searchname = mysqli_real_escape_string($conn, $_GET['search']);
-		// 	$_SESSION['search'] = $searchname; //PASS THE VARIABLE TO staffinformationresult.php
-		// 	echo "<h3>Hasil Carian</h3>";
-		// 	$sql = "SELECT staffname
-		// 			FROM staff
-		// 			WHERE staffname LIKE '%$searchname%'
-		// 			ORDER BY staffname ASC;";
-		// 	$result = mysqli_query($conn, $sql);
-		// 	if($result -> num_rows > 0) {
-		// 		while($row = $result -> fetch_assoc()) {
-		// 			echo "Name: <a href='staffinformationresult.php'>" .$row['staffname']. "</a><br>";
-		// 		}
-		// 	}
-		// 	else {
-		// 		echo "There is 0 results";
-		// 	}
-		// }
-		?>
+			<!-- Table -->
+			<div>
+				<table class="table table-sm table-bordered table-hover">
+					<thead class="thead-light text-center">
+						<tr>
+							<td>Bil.</td>
+							<td>Name</td>
+							<td>Unit</td>
+							<td>Action</td>
+						</tr>
+					</thead>
+					<tbody id="tablefortoday" class="table-responsive-sm">
+						<tr>
+							<?php
+							$i = 1;
+							$sql = "SELECT staffname, staffunit, staffid
+									FROM staff
+									ORDER BY staffname ASC;";
+							$result = $conn -> query($sql);
+							$i = 1;
+							if($result -> num_rows > 0) {
+								while($row = $result -> fetch_array()) {
+									//$_SESSION['currentid'] = $row['staffid'];
+									$id = $row['staffid'];
+							?>
+									<tr>
+										<td class="bil"><?php echo $i;?></td>
+										<td><?php echo $row["staffname"];?></td>
+										<td><?php echo $row["staffunit"];?></td>
+										<td class="text-center"><button id="infobutton" data-id="<?php echo $id;?>" type="button" class="btn btn-sm btn-secondary infobutton" data-toggle="modal" data-target="#exampleModal">View</button></td>
+									</tr>
+							<?php
+									$i++;
+								}
+							}
+							?>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Info</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body"></div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<a name="edit-button" href="../index/staffinformationresult.php" type="button" class="btn btn-primary">Edit</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</form>
 	</section>
 	<script>
