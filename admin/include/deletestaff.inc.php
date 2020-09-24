@@ -31,9 +31,9 @@
 							?></b>
 						</div>
 						<div class="modal-footer">
-							<form method="post">
+							<form action="../index/staffinformationresult.php" method="post">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-								<button name="delete-button" type="submit" class="btn btn-danger" formaction="../index/staffinformationresult.php">Padam</button>
+								<button name="delete-button" type="submit" class="btn btn-danger">Padam</button>
 							</form>
 						</div>
 					</div>

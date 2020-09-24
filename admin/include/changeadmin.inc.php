@@ -31,9 +31,9 @@
 							?></b>
 						</div>
 						<div class="modal-footer">
-							<form method="post">
+							<form action="../index/staffinformationresult.php" method="post">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-								<button name="change-button" type="button" href="../index/staffinformationresult.php" class="btn btn-success">Ubah</button>
+								<button name="change-button" type="button" class="btn btn-success">Ubah</button>
 							</form>
 						</div>
 					</div>

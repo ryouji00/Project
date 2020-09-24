@@ -28,17 +28,16 @@
 						if($row1['staffposition'] != $admin) {
 							include "../include/changeadmin.inc.php";
         					$confirmstaff = $_SESSION['test'];
-        					$admin = "admin";
 							if(isset($_POST['change-button'])) {
 								$sql = "UPDATE staff
-        					            SET staffposition = $admin
+        					            SET staffposition = 'Admin'
 										WHERE staffid = '$confirmstaff';";
 								$conn -> query($sql);
 								if ($conn -> query($sql) === TRUE) {
-									echo "Record deleted successfully";
+									echo "<br>Record deleted successfully";
 								}
 								else {
-									echo "Error deleting record: " . $conn->error;
+									echo "Error changing record: " . $conn->error;
 								}
 							}
 						}
@@ -51,8 +50,12 @@
 						$sql = "DELETE FROM staff
 								WHERE staffid = '$confirmstaff';";
 						$conn -> query($sql2);
-						if ($conn -> query($sql2, $sql) === TRUE) {
-							echo "Record deleted successfully";
+						if ($conn -> query($sql) === TRUE) {
+							echo "<br>Record deleted successfully";
+			?>
+							<meta http-equiv="refresh" content="3;url=staffinformation.php" />
+							<p><b>Redirecting in 3 seconds...</b></p>
+			<?php
 						}
 						else {
 							echo "Error deleting record: " . $conn->error;
