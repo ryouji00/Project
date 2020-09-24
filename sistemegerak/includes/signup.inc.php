@@ -8,6 +8,7 @@ if (isset($_POST['signup-submit'])) {
 	$password = $_POST['pwd'];
 	$passwordRepeat = $_POST['pwd-repeat'];
 	$name = $_POST['nama'];
+	$_POST['position'] = "Staff";
 	$staffjawatan = $_POST['position'];
 	$staffbahagian = $_POST['unit'];
 	
