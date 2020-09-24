@@ -31,29 +31,13 @@
 							?></b>
 						</div>
 						<div class="modal-footer">
-							<form method="post">
+							<form action="../index/staffinformationresult.php" method="post">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-								<button name="delete-button" type="button" class="btn btn-danger">Padam</button>
+								<button name="delete-button" type="submit" class="btn btn-danger">Padam</button>
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
-		<?php
-		$confirmstaff = $_SESSION['test'];
-		if(isset($_POST['delete-button'])) {
-			$sql2 = "DELETE FROM destination
-					WHERE staffid = '$confirmstaff';";
-			$sql = "DELETE FROM staff
-					WHERE staffid = '$confirmstaff';";
-			$conn -> query($sql2, $sql);
-			if ($conn -> query($sq2, sql) === TRUE) {
-				echo "Record deleted successfully";
-			}
-			else {
-				echo "Error deleting record: " . $conn->error;
-			}
-		}
-		?>
 	</section>

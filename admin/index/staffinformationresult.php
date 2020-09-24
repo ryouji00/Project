@@ -19,8 +19,49 @@
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>" .$row['staffunit'];
 					echo "<br>";
-					include "../include/changeadmin.inc.php";
+					$sql1 = "SELECT staffposition
+							FROM staff
+							WHERE staffid = $currentid;";
+					$result = $conn -> query($sql1);
+					$admin = "Admin";
+					while($row1 = $result -> fetch_assoc()) {
+						if($row1['staffposition'] != $admin) {
+							include "../include/changeadmin.inc.php";
+        					$confirmstaff = $_SESSION['test'];
+							if(isset($_POST['change-button'])) {
+								$sql = "UPDATE staff
+        					            SET staffposition = 'Admin'
+										WHERE staffid = '$confirmstaff';";
+								$conn -> query($sql);
+								if ($conn -> query($sql) === TRUE) {
+									echo "<br>Record deleted successfully";
+								}
+								else {
+									echo "Error changing record: " . $conn->error;
+								}
+							}
+						}
+					}
+					echo "<br>";
 					include "../include/deletestaff.inc.php";
+					$confirmstaff = $_SESSION['test'];
+					if(isset($_POST['delete-button'])) {
+						$sql2 = "DELETE FROM destination
+								WHERE staffid = '$confirmstaff';";
+						$sql = "DELETE FROM staff
+								WHERE staffid = '$confirmstaff';";
+						$conn -> query($sql2);
+						if ($conn -> query($sql) === TRUE) {
+							echo "<br>Record deleted successfully";
+			?>
+							<meta http-equiv="refresh" content="3;url=staffinformation.php" />
+							<p><b>Redirecting in 3 seconds...</b></p>
+			<?php
+						}
+						else {
+							echo "Error deleting record: " . $conn->error;
+						}
+					}
 				}
 			}
 			echo "<br>";
@@ -170,7 +211,7 @@
 					$newcat = $_GET['newcategory'];
 					$sql = "UPDATE destination
 							SET category = '$newcat'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -183,7 +224,7 @@
 					$newdestname = $_GET['newdestname'];
 					$sql = "UPDATE destination
 							SET placename = '$newdestname'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -196,7 +237,7 @@
 					$newworkname = $_GET['newworkname'];
 					$sql = "UPDATE destination
 							SET workname = '$newworkname'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -210,7 +251,7 @@
 					$newend = $_GET['newend'];
 					$sql = "UPDATE destination
 							SET tripstart = '$newstart', tripend = '$newend'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
@@ -224,7 +265,7 @@
 					$newendtime = $_GET['newendtime'];
 					$sql = "UPDATE destination
 							SET timestart = '$newstarttime', timeend = '$newendtime'
-							WHERE staffid = '$currentid' AND destinationId = '$confirmdestid';";
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
 					if ($conn->query($sql) === TRUE) {
 						echo "<hr>Record updated successfully";
 					}
