@@ -37,6 +37,10 @@
 								$conn -> query($sql);
 								if ($conn -> query($sql) === TRUE) {
 									echo "<br>Record deleted successfully";
+				?>
+								<meta http-equiv="refresh" content="3;url=staffinformationresult.php" />
+								<p><b>Redirecting in 3 seconds...</b></p>
+				<?php
 								}
 								else {
 									echo "Error changing record: " . $conn->error;
