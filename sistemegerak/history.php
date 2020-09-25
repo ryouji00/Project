@@ -23,6 +23,9 @@
                 echo "<br>Date: " .$newTime. " hingga " .$newTime2. "<hr>";
             }
         }
+        else {
+            echo "Tiada rekod";
+        }
         ?>
     </section>
     
