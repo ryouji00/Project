@@ -307,6 +307,22 @@
 						echo "<hr>Error updating record: " . $conn->error;
 					}
 				}
+				//change replace officer name
+				elseif(isset($_GET['change-officername'])) {
+					$newofficername = $_GET['newofficername'];
+					$sql = "UPDATE destination
+							SET replaceofficer = '$newofficername'
+							WHERE staffid = '$currentid' AND destinationid = '$confirmdestid';";
+					if ($conn->query($sql) === TRUE) {
+						echo "<hr>Record updated successfully";
+						?>
+							<meta http-equiv="refresh" content="0;url=staffinformationresult.php" />
+						<?php
+					}
+					else {
+						echo "<hr>Error updating record: " . $conn->error;
+					}
+				}
 			}
 			?>
 			</form>

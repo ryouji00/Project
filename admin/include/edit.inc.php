@@ -47,3 +47,9 @@
 				</div>
 				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
+				<!-- Change placename -->
+				<div>
+					<input type="text" name="newofficername" placeholder="Enter correct name">
+					<button class="btn btn-secondary btn-sm" name="change-officername">edit</button>
+				</div>
+				<br>
