@@ -10,7 +10,7 @@
         $sql ="SELECT *
                 FROM destination
                 WHERE staffid = $id
-                ORDER BY tripstart ASC";
+                ORDER BY tripstart DESC";
         $result = $conn -> query($sql);
         if($result -> num_rows > 0) {
             while($row2 = $result -> fetch_assoc()) {
