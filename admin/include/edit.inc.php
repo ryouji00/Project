@@ -45,7 +45,6 @@
 					<input id="DTformat" type="time" name="newendtime">
 					<button class="btn btn-secondary btn-sm" name="change-time">edit</button>
 				</div>
-				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
 				<br>
 				<!-- Change placename -->
 				<div>
@@ -53,3 +52,4 @@
 					<button class="btn btn-secondary btn-sm" name="change-officername">edit</button>
 				</div>
 				<br>
+				<button class="btn btn-dark btn-sm" type="Reset">Reset</button>
