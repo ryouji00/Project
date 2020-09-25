@@ -18,16 +18,16 @@
 					<button class="btn btn-secondary btn-sm" name="change-category">edit</button>
 				</div>
 				<br>
-				<!-- Change placename -->
-				<div>
-					<input type="text" name="newdestname" placeholder="Enter new for place being held">
-					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
-				</div>
-				<br>
 				<!-- Change workname -->
 				<div>
 					<input type="text" name="newworkname" placeholder="Enter new name for the work">
 					<button class="btn btn-secondary btn-sm" name="change-workname">edit</button>
+				</div>
+				<br>
+				<!-- Change placename -->
+				<div>
+					<input type="text" name="newdestname" placeholder="Enter new for place being held">
+					<button class="btn btn-secondary btn-sm" name="change-destname">edit</button>
 				</div>
 				<br>
 				<!-- Change date -->
