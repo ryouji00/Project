@@ -7,7 +7,7 @@ if(isset($_POST['currentid'])) {
 	$sql2 = "SELECT category, workname, placename, tripstart, tripend, timestart, timeend,replaceofficer
 			FROM destination
 			WHERE staffid = $currentid
-			ORDER BY tripstart ASC
+			ORDER BY tripstart DESC
 			LIMIT 5;";
 	$result2 = $conn -> query($sql2);
 	if(mysqli_num_rows($result2) > 0) {
