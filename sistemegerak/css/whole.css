@@ -33,6 +33,13 @@ body {
     text-align: justify;
 }
 
+.container {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+
 h2 {
     margin: auto;
     background-color: white;
