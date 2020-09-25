@@ -22,6 +22,8 @@ include_once 'includes/dbh.inc.php';
 		<img class="secondimg" src="img\kkm2.png" width="160">
 		<span><h1 class="tajuk">Sistem E-Pergerakan Pegawai</h1></span>
 </div>
+<?php
+if(isset($_SESSION['idstaff'])) {?>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light toggled">
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav nav-tabs mr-auto">
@@ -47,7 +49,9 @@ include_once 'includes/dbh.inc.php';
 						</ul>
 					</div>
 				</nav>
-		
+		<?php
+}
+?>
 
 </body>
 </html>
