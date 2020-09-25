@@ -20,6 +20,7 @@
 					echo "<br>Username: " .$row['staffusername'];
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>" .$row['staffunit'];
+					echo "<br>";
 					$sql1 = "SELECT staffposition
 							FROM staff
 							WHERE staffid = $currentid;";
@@ -36,10 +37,10 @@
 								$conn -> query($sql);
 								if ($conn -> query($sql) === TRUE) {
 									echo "<br>Record updated successfully";
-				?>
+			?>
 								<meta http-equiv="refresh" content="3;url=staffinformationresult.php" />
 								<p><b>Redirecting in 3 seconds...</b></p>
-				<?php
+			<?php
 								}
 								else {
 									echo "Error changing record: " . $conn->error;
@@ -59,10 +60,10 @@
 							$conn -> query($sql2);
 							if ($conn -> query($sql) === TRUE) {
 								echo "<br>Record deleted successfully";
-				?>
+			?>
 								<meta http-equiv="refresh" content="3;url=staffinformation.php" />
 								<p><b>Redirecting in 3 seconds...</b></p>
-				<?php
+			<?php
 							}
 							else {
 								echo "Error deleting record: " . $conn->error;
