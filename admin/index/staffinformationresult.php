@@ -20,7 +20,6 @@
 					echo "<br>Username: " .$row['staffusername'];
 					echo "<br>E-Mail: " .$row['staffemail'];
 					echo "<br>" .$row['staffunit'];
-					echo "<br>";
 					$sql1 = "SELECT staffposition
 							FROM staff
 							WHERE staffid = $currentid;";
