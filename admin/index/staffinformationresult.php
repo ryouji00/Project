@@ -134,6 +134,7 @@
 				$sql = "SELECT *
 						FROM destination
 						WHERE staffid = $currentid
+						ORDER BY tripstart DESC
 						LIMIT 5;";
 				$result = $conn -> query($sql);
 				if($result -> num_rows > 0) {
