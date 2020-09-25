@@ -35,7 +35,7 @@
 										WHERE staffid = '$confirmstaff';";
 								$conn -> query($sql);
 								if ($conn -> query($sql) === TRUE) {
-									echo "<br>Record deleted successfully";
+									echo "<br>Record updated successfully";
 				?>
 								<meta http-equiv="refresh" content="3;url=staffinformationresult.php" />
 								<p><b>Redirecting in 3 seconds...</b></p>
