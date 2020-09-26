@@ -4,8 +4,8 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/whole.css">
 <body>
-    <section class="container1">
-        <div class="resultoverall">
+    <section class="contain-record">
+        <section class="resultoverall">
             <?php
             $id = $_SESSION['idstaff'];
             $sql ="SELECT *
@@ -29,8 +29,8 @@
                 echo "Tiada rekod";
             }
             ?>
-        </div>
-        <div class="resultoverall">
+        </section>
+        <section class="resultoverall">
             <?php
             $id = $_SESSION['idstaff'];
             $sql ="SELECT *
@@ -54,8 +54,8 @@
                 echo "Tiada rekod";
             }
             ?>
-        </div>
-        <div class="resultoverall">
+        </section>
+        <section class="resultoverall">
             <?php
             $id = $_SESSION['idstaff'];
             $sql ="SELECT *
@@ -79,8 +79,8 @@
                 echo "Tiada rekod";
             }
             ?>
-        </div>
-        <div class="resultoverall">
+        </section>
+        <section class="resultoverall">
             <?php
             $id = $_SESSION['idstaff'];
             $sql ="SELECT *
@@ -104,7 +104,7 @@
                 echo "Tiada rekod";
             }
             ?>
-        </div>
+        </section>
     </section>
     
 </body>

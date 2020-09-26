@@ -5,7 +5,7 @@
 	<hr>
 	<h2>Pergerakan Menyeluruh</h2>
 	<hr>
-	<section class="container1">
+	<section class="contain-record">
 		<section class="peopleout">
 			<?php
 			$sql = "SELECT s.staffname, s.staffunit
