@@ -36,13 +36,13 @@ $result = $conn -> query($sql);
 						<option value="Lawatan">Lawatan Tapak</option>
 					</select>
 					<br>
-					<input type="text" name="work" placeholder="Nama Tugasan">
-					<input type="text" name="place" placeholder="Tempat">
-					<input type="date" name="trip-start">
+					<input type="text" name="work" placeholder="Nama Tugasan" required>
+					<input type="text" name="place" placeholder="Tempat" required>
+					<input type="date" name="trip-start" required>
 					<input type="date" name="trip-end">
 					<input type="time" name="time-start">
 					<input type="time" name="time-end">
-					<input type="text" name="officer" placeholder="Pegawai Peganti">
+					<input type="text" name="officer" placeholder="Pegawai Peganti" required>
 					<button type="submit" name="send-submit">Hantar</button>
 					<button type="reset" name="send-again">Tulis Semula</button>
 				</form>
