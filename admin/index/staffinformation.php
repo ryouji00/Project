@@ -44,7 +44,7 @@ if($_SESSION['idstaff']) {
 	<!-- Search  -->
 	<section id="carian">
 		<form action="staffinformation.php" method="GET">
-			<label>Masukkan nama pegawai: </label>
+			<label>Masukkan nama pegawai atau unit: </label>
 			<input id="myInput" name="search" type="text" onkeyup="myFunction()">
 			<!-- Table -->
 			<div>

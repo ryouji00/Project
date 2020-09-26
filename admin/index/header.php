@@ -27,7 +27,7 @@ include_once 'configdb.php';
 								<span class="navbar-toggler-icon"></span>
 							</button>
     						<li class="nav-item active">
-    							<a class="nav-link" href="http://localhost/Project/admin/index/overallmovement.php">PERGERAKAN MENYELURUH<span class="sr-only">(current)</span></a>
+    							<a class="nav-link" href="http://localhost/Project/admin/index/overallmovement.php">Pergerakan Menyeluruh<span class="sr-only">(current)</span></a>
     						</li>
     						<li class="nav-item">
     							<a class="nav-link" href="http://localhost/Project/sistemegerak/form.php?form=success">Halaman borang</a>
