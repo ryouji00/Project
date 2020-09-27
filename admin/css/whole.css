@@ -35,11 +35,6 @@ a {
     text-decoration: none;
 }
 
-input {
-    outline: none;
-    outline-color: #888888;
-}
-
 a:hover {
     outline: none;
     color: black;
@@ -118,7 +113,7 @@ input {
     width: 300px;
     border-radius: 8px;
     border-width: 1px;
-    color: #888888;
+    color: #000000;
 }
 
 .bil {
