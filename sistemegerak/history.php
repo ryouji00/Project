@@ -13,7 +13,7 @@
                     WHERE staffid = $id AND category = 'Mesyuarat'
                     ORDER BY tripstart DESC";
             $result = $conn -> query($sql);
-			echo "<br><h5>Lawatan Tapak</h5><hr>";
+			echo "<br><h5>Mesyuarat</h5><hr>";
             if($result -> num_rows > 0) {
                 while($row2 = $result -> fetch_assoc()) {
                     include '../admin/include/dateformat.inc.php';
@@ -38,7 +38,7 @@
                     WHERE staffid = $id AND category = 'Bengkel'
                     ORDER BY tripstart DESC";
             $result = $conn -> query($sql);
-			echo "<br><h5>Lawatan Tapak</h5><hr>";
+			echo "<br><h5>Bengkel</h5><hr>";
             if($result -> num_rows > 0) {
                 while($row2 = $result -> fetch_assoc()) {
                     include '../admin/include/dateformat.inc.php';
@@ -63,7 +63,7 @@
                     WHERE staffid = $id AND category = 'Kursus'
                     ORDER BY tripstart DESC";
             $result = $conn -> query($sql);
-			echo "<br><h5>Lawatan Tapak</h5><hr>";
+			echo "<br><h5>Kursus</h5><hr>";
             if($result -> num_rows > 0) {
                 while($row2 = $result -> fetch_assoc()) {
                     include '../admin/include/dateformat.inc.php';
