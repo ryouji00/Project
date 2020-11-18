@@ -48,7 +48,7 @@
 				<br>
 				<!-- Change placename -->
 				<div>
-					<input type="text" name="newofficername" placeholder="Enter correct name">
+					<input type="text" name="newofficername" placeholder="Enter replacement officer name">
 					<button class="btn btn-secondary btn-sm" name="change-officername">edit</button>
 				</div>
 				<br>
